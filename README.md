@@ -7,7 +7,7 @@
 <p align="center">
   Framework vRPex otimizado • Estimativa até 700 players (dependendo da sua VPS) • Base profissional, organizada e pronta para servidores RP.<br/>
   <a href="https://discord.gg/fivecommunity"><strong>🌐 Discord Five Community</strong></a> • 
-  <a href="https://discord.gg/foxzincommunity"><strong>⚙️ Discord Foxzin Community</strong></a>
+
 </p>
 
 ---
