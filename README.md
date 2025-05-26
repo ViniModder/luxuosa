@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://imgur.com/a/64tTD05" alt="Base Luxuosa Logo" width="300"/>
+  <img src="https://imgur.com/gallery/base-luxuosa-five-community-B31wBmw" alt="Base Luxuosa Logo" width="300"/>
 </p>
 
 <h1 align="center">💎 Base Luxuosa - Remasterizada</h1>
