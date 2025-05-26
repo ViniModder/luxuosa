@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --text-color-big:
+    hsl(218, 91%, 48%);
+    --text-color-a:
+    hsl(0,0%,100%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button,input{
+    outline: 0;
+    border: 0;
+}
+
+body,html{
+    width: 100%;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+
+    /* background: url(https://media-rockstargames-com.akamaized.net/tina-uploads/tina-modules/6235/b5cfec4ca7db874a52f3221b9e034fea31ee4853.jpg); */
+    /* background-size: cover !important; */
+    /* background-repeat: no-repeat !important; */
+    /* background-position: center !important; */
+
+    color: var(--text-color-a);
+}
+
+.interface{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+}
+
+.big-background{
+    border-radius: 2.5vw;
+    background: linear-gradient(to bottom, #111 0%, rgb(22 22 22) 100%) padding-box, linear-gradient(to bottom, hsl(235, 95%, 48%) 0%, transparent 100%, #0539f3 100%) border-box;
+    border: solid 0.15vw #0938f3;
+    padding: .5vw;
+}
+
+.peds-modal{
+    display: flex;
+    gap: 0.5vw;
+    width: 40vw;
+    flex-wrap: wrap;
+}
+
+.peds-modal .peds-title{
+    width: 20%;
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.15vw;
+}
+
+.peds-interface{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.peds-list{
+    padding: 0.5vw;
+    gap: 0.5vw;
+    width: 100%;
+    /* background: red; */
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 40vw;
+    overflow: auto;
+}
+
+.peds-list .ped-single{
+    width: calc(100%/2 - .5vw);
+    background: rgba(0, 0, 0, 0.50);
+    padding: 3.5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5vw;
+    border-radius: 2.5vw;
+}
+
+.peds-list .ped-single .ped-photo{
+    width: 100%;
+    aspect-ratio: 1/1;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: .25vw;
+    background-size: cover  !important;
+    background-repeat: no-repeat !important;
+    /* background-position: center !important; */
+}
+
+.peds-list .ped-single .ped-name{
+    width: 100%;
+    font-size: 0.85vw;
+    font-weight: 900;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.peds-list .ped-single .ped-button{
+    width: 100%;
+    padding: 0.25vw 0;
+    background: hsl(238, 94%, 50%);
+    text-align: center;
+    border-radius: 1.5vw;
+    font-weight: 600;
+    font-size: 1vw;
+    cursor: pointer;
+}
+
+/* Para scrollbar vertical */
+::-webkit-scrollbar {
+    background: #2105f3; /* Cor de fundo do scrollbar */
+    width: 6px; /* Largura do scrollbar */
+    z-index: 1;
+}
+
+/* Para scrollbar horizontal */
+::-webkit-scrollbar:horizontal {
+    background: #0529f3; /* Cor de fundo do scrollbar horizontal */
+    height: 2px; /* Altura do scrollbar horizontal */
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: #fff; /* Cor do "thumb" do scrollbar */
+    border-radius: 3px; /* Bordas arredondadas para o "thumb" */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e5e5e5; /* Cor do "thumb" ao passar o mouse */
+}

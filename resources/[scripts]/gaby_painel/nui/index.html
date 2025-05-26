@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>gaby_painel by igorwinchester</title>
+</head>
+<body>
+    <div id="app">
+        <div id="box" v-if="show">
+            <div class="content">
+                <div class="top">
+                    <button id="close_button" @click="close()">X</button>
+                    <div class="content_name">
+                        <b>PAINEL ADM</b>
+                    </div>
+                    <div class="menu">
+                        <div class="item_menu geral" @click="confirm_label('geral')"><p class="text_menu">Geral:</p></div>
+                        <div class="item_menu setagem" @click="confirm_label('setagem')"><p class="text_menu">Setagem:</p></div>
+                        <div class="item_menu itens" @click="confirm_label('itens')"><p class="text_menu">Itens:</p></div>
+                        <div class="item_menu locais" @click="confirm_label('locais')"><p class="text_menu">Locais:</p></div>
+                        <div class="item_menu playerson" @click="confirm_label('playerson')"><p class="text_menu">Players on:</p></div>
+                        <div class="item_menu vehicles" @click="confirm_label('cars')"><p class="text_menu">Carros:</p></div>
+                        <div class="item_menu skins" @click="confirm_label('skins')"><p class="text_menu">Skins:</p></div>                    </div>
+                </div>
+                <div class="box_container">
+
+                    <div class="confirm_qtd_box" v-if="qtd_box">
+                        <button id="close_qtd_box" @click="close_boxqtd">x</button>
+                        <p id="text_qtd_box">Coloque a quantidade:</p>
+                        <input type="number" id="input_qtd">
+                        <button id="confirm_button_qtd_box" @click="confirm_qtd()">CONFIRMAR</button>
+                    </div>
+
+                    <div class="confirm_id_box" v-if="id_box">
+                        <button id="close_id_box" @click="close_boxidplayer()">x</button>
+                        <p id="text_id_box">Coloque o ID do player:</p>
+                        <input type="number" id="input_id">
+                        <button id="confirm_button_id_box" @click="confirm_idplayer()">CONFIRMAR</button>
+                    </div>
+
+                    <div class="result_" v-if="label == 'geral'">
+                            <button class="buttons_geral" @click="open_idbox('wladd')">LIBERAR WL</button>
+                            <button class="buttons_geral" @click="open_idbox('wlrem')">REMOVER WL</button>
+                            <button class="buttons_geral" @click="open_idbox('god')">REVIVER</button>
+                            <button class="buttons_geral" @click="confirm_geral_direct('godall')">REVIVER TODOS</button>
+                            <button class="buttons_geral" @click="open_idbox('kill')">MATAR</button>
+                            <button class="buttons_geral" @click="open_idbox('ban')">BANIR</button>
+                            <button class="buttons_geral"  @click="open_idbox('unban')">DESBANIR</button>
+                            <button class="buttons_geral" @click="open_idbox('kick')">KICKAR / EXPULSAR</button>
+                            <button class="buttons_geral" @click="open_idbox('give_veh')">DAR VEICULO</button>
+                            <button class="buttons_geral"  @click="open_idbox('rem_veh')">REMOVER VEICULO</button>
+                            <button class="buttons_geral"  @click="open_idbox('set_skin')">SETAR SKIN</button>
+                            <button class="buttons_geral" @click="open_idbox('freeze')">CONGELAR PLAYER</button>
+                            <button class="buttons_geral" @click="open_idbox('unfreeze')">DESCONGELAR PLAYER</button>
+                            <button class="buttons_geral" @click="open_idbox('send_dm')">MENSAGEM PRIVADA</button>
+                            <button class="buttons_geral" @click="confirm_geral_direct('send_adm')">AVISO ADM</button>
+                            <button class="buttons_geral" @click="open_idbox('catch_rg')">PUXAR RG COMPLETO</button>
+                            <button class="buttons_geral" @click="open_idbox('givemoney')">DAR DINHEIRO</button>
+                            <button class="buttons_geral" @click="open_idbox('remove_money')">RETIRAR DINHEIRO</button>
+                            <button class="buttons_geral" @click="open_idbox('give_item')">DAR ITEM</button>
+                            <button class="buttons_geral" @click="open_idbox('remove_item')">RETIRAR ITEM</button>
+                            <button class="buttons_geral" @click="open_idbox('clear_inv')">LIMPAR INVENTÁRIO</button>
+                            <button class="buttons_geral" @click="open_idbox('clear_weapons')">LIMPAR ARMAS</button>
+                            <button class="buttons_geral" @click="confirm_geral_direct('spawn_veh')">SPAWNAR VEICULO</button>
+                            <button class="buttons_geral" @click="confirm_geral_direct('fix')">CONCERTAR VEICULO</button>
+                            <button class="buttons_geral"  @click="confirm_geral_direct('tuning')">TUNAR VEICULO</button>
+                            <button class="buttons_geral"  @click="open_idbox('tptome')">TPTOME</button>
+                            <button class="buttons_geral"  @click="open_idbox('tpto')">TPTO</button>
+                            <button class="buttons_geral"  @click="confirm_geral_direct('tpway')">TPWAY</button>
+                            <button class="buttons_geral"  @click="confirm_geral_direct('tpcds')">TPCDS</button>
+                            <button class="buttons_geral"  @click="confirm_geral_direct('hash')">HASH VEICULO</button>
+                            <button class="buttons_geral"  @click="confirm_geral_direct('dv')">DV</button>
+                            <button class="buttons_geral"  @click="confirm_geral_direct('dvall')">DVALL / RANGE</button>
+                            <button class="buttons_geral"  @click="confirm_geral_direct('clear_allveh')">LIMPAR VEICULOS</button>
+                            <button class="buttons_geral"  @click="confirm_geral_direct('clear_props')">LIMPAR PROPS</button>
+                            <button class="buttons_geral"  @click="confirm_geral_direct('presetclothes')">PRESET ROUPAS</button>
+                            
+                    </div>
+
+                    <div class="result_" v-if="label == 'setagem'">
+                        <div class="groups_list ggroups">
+                            <p class="t_groups_list">Todos Cargos</p>
+                            <div class="groups_list_md md_ggroups">
+                                <div class="div_button_gplist" v-for="k in groups_server">
+                                    <p class="result_grouplist" @click="add_rem_group(k,'addgroup')">{{k}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="groups_list gplayer">
+                            <p class="t_groups_list">Cargos Jogador</p>
+                            <div class="groups_list_md md_gplayer">
+                                <div class="div_button_gplist" v-for="k in groups_player">
+                                    <p class="result_grouplist" @click="add_rem_group(k,'remgroup')">{{k}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="id_group_box">
+                            <p class="t_id_group_box">Coloque o ID:</p>
+                            <input type="number" id="input_id_groupbox">
+                            <button class="button_gpbox atualizar_gpbox" @click="att_groups()">ATUALIZAR</button>
+                            <button class="button_gpbox confirmar_gpbox" @click="close()">CONFIRMAR</button>
+                        </div>
+                    </div>
+                    <div class="result_" v-if="label == 'itens'">
+                        <p class="text_top_locs">Escolha o item que deseja pegar: </p>
+                        <div id="box_item" v-for="k in itemlist" @click="confirm_item(k)">
+                            <p class="text_boxitem">{{k}}</p>
+                        </div>
+                    </div>
+                    <div class="result_" v-if="label == 'locais'">
+                        <p class="text_top_locs">Escolha onde quer ir: </p>
+                        <div id="result_locais" v-for="k in locais">
+                            <p class="text_boxitem" @click="tp_loc(k.cds,k.tipo,k.nome)">{{k.nome}}</p>
+                        </div>
+                    </div>
+                    <div class="result_" v-if="label == 'playerson'">
+                        <div class="total_pon r_players">
+                            <p class="text_totalplyson" v-for="">Total Online: {{app.totalplayers}} </p>
+                        </div>
+                        <div class="total_pon r_staffs">
+                            <p class="text_totalplyson" v-for="">Staffs Online: {{app.totalstaffs}}</p>
+                            <button class="button_getstaffs" @click="button_getstaffs()">?</button>
+                        </div>
+                        <div id="players_on" v-for="k in playerson">
+                            <p class="text_plyson" >{{k}}</p>
+                            <button class="button_plyson tpto" @click="button_players(k,'tpto')">IR ATE</button>
+                            <button class="button_plyson tptome" @click="button_players(k,'tptome')">PUXAR</button>
+                            <button class="button_plyson revive" @click="button_players(k,'revive')">REVIVER</button>
+                        </div>
+                    </div>
+                    <div class="result_" v-if="label == 'cars'">
+                        <p class="text_top_locs">Veiculos: </p>
+                        <div class="car_result_box">
+                            <div class="result_cars" v-for="k in carlist">
+                                
+                                <img :src="image_car(k.car)" class="img_carbox" @click="spawncar_setskin('spawncar',k.car)">
+                                <p class="name_car">{{k.name}}</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result_" v-if="label == 'skins'">
+                        <p class="text_top_locs">Skins: </p>
+                        <div id="box_skin" v-for="k in skinlist" @click="spawncar_setskin('setskin',k.skin)">
+                            <p class="text_boxskin">{{k.name}}</p>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script type="text/javascript" src="script.js"></script>
+</html>

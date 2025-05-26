@@ -1,0 +1,237 @@
+/* ## SNT Resources ## Alerta | Warning ##
+[PT-BR] Qualquer alteração neste arquivo que resulte em falhas no funcionamento, erros ou bugs NÃO daremos suporte.
+Utilize os arquivos de CONFIGURAÇÃO abertos para edição!
+[EN] Any changes to this file that result in malfunctions, errors or bugs we will NOT support.
+Use open CONFIGURATION files! */
+
+@font-face { font-family: Gotham-Book; src: url("fonts/Gotham-Book.otf") format("opentype"); }
+@font-face { font-family: Gotham-Bold; src: url("fonts/Gotham-Bold.otf") format("opentype"); }
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    word-break: normal;
+    word-spacing: normal !important;
+    background-size: cover;
+}
+
+.race-container {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+    color: white;
+    font-family: 'Gotham-Bold';
+    background: linear-gradient(179.99deg, #0435f7 0.01%, rgba(6, 84, 240, 0.493) 109.71%);
+    width: 840px;
+    padding: 10px;
+    border-radius: 13px;
+    box-shadow: 0 0 .1em rgb(2, 114, 242);
+}
+
+.race-h2 {
+    margin: 10px;
+    font-size: 14px;
+    padding-bottom: 5px;
+    color: rgb(230, 230, 230);
+}
+
+#races {
+    max-height: 450px;
+    overflow-y: scroll;
+    border-radius: 6px;
+}
+
+.race {
+    position: relative;
+    margin-bottom: 10px;
+    color: #13151d;
+    text-align: justify;
+    padding: 10px;
+    width: 820px;
+    background-color: rgba(190, 190, 190, 0.445);
+    border-radius: 6px;
+
+}
+
+.race-item-needed {
+    margin-top: 5px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(247, 247, 247, 0.233);
+    border-radius: 13px;
+}
+
+.race-info-button {
+    text-align: center;
+    align-items: center;
+    font-size: 15px;
+    line-height: 35px;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    background-color: #13151d;
+    border-radius: 8px;
+    transition: all ease-in-out .3s;
+}
+
+.race-info-button:hover {
+    cursor: pointer;
+    background: white;
+    box-shadow: 0 0 2em rgba(255, 255, 255, 0.37);
+    color: #13151d;
+}
+
+.race-desc {
+    padding: 5px;
+    border-radius: 6px;
+    color: rgb(228, 228, 228); 
+    font-family: 'Gotham-Book';
+    max-width: 750px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+.race-page-h2 {
+    margin: 10px;
+    font-size: 20px;
+    padding-bottom: 5px;
+    color: rgb(230, 230, 230);
+}
+
+.top-racer {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: 'Gotham-Book';
+    text-align: justify;
+    padding-left: 15px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 15px;
+    border-radius: 8px;
+    background-color: rgba(247, 247, 247, 0.233);
+    transition: all ease-in-out .3s;
+}
+
+.top-racer i {
+    text-shadow: 0 0 1em rgba(255, 255, 255, 0.692);
+}
+
+.top-racer .bold {
+    font-family: 'Gotham-Bold';
+}
+
+.top-racer .coloured {
+    color: #13151d;
+}
+
+.top-racer:hover {
+    transform: scale(0.99);
+}
+
+.race-page-button-race {
+    position: absolute;
+    height: 20px;
+    width: fit-content;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 20px;
+    line-height: 20px;
+    font-family: 'Gotham-Bold';
+    text-align: center;
+    transition: all ease-in-out .3s;
+    background-color: orange;
+    color: white;
+    padding: 10px;
+    border-radius: 7px;
+    right: 10px;
+    bottom: 5px;
+}
+
+.race-page-button-race:hover {
+    cursor: pointer;
+    transform: scale(0.99);
+    box-shadow: 0 0 1em rgba(255, 166, 0, 0.507);
+}
+
+.race-page-button-back {
+    position: absolute;
+    height: 20px;
+    width: fit-content;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 20px;
+    line-height: 20px;
+    font-family: 'Gotham-Bold';
+    text-align: center;
+    transition: all ease-in-out .3s;
+    background-color: rgb(185, 185, 185);
+    color: white;
+    padding: 10px;
+    border-radius: 7px;
+    left: 10px;
+    bottom: 5px;
+}
+
+.race-page-button-back:hover {
+    cursor: pointer;
+    transform: scale(0.99);
+    box-shadow: 0 0 1em rgba(235, 235, 235, 0.507);
+}
+
+#race_info {
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    transform: translate(-2%,-50%);
+}
+
+#race_time {
+    width: 245px;
+    height: 55px;
+    line-height: 27.5px;
+    overflow: hidden;
+    background-image: url("img/time_bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: 'Gotham-Bold';
+    color: white;
+    text-shadow: 0 0 .1em black;
+    text-align: center;
+    font-size: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+#race_checkpoint {
+    margin-top: 10px;
+    width: 245px;
+    height: 55px;
+    line-height: 27.5px;
+    overflow: hidden;
+    background-image: url("img/checkpoint_bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: 'Gotham-Bold';
+    color: white;
+    text-shadow: 0 0 .1em black;
+    text-align: center;
+    font-size: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+}

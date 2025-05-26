@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet/less" type="text/css" href="./assets/styles/style.less" /> -->
+    <link rel="stylesheet/less" type="text/css" href="./assets/styles/style.less" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5/dark.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <img src="./assets/images/logo.png" alt="Logo 1" class="logo logo-1">
+
+    <div id="app" class="container">
+        <div class="serverInfos">
+            <div class="infos infosText">
+
+                <div class="playersOnline">
+                    <div class="playersOnline-content">
+                        <img src="./assets/images/person.svg" alt="">
+                        <p><b class="on">1421</b> <b>ONLINE</b></p>
+                    </div>
+                    <!-- <p>JOGADORES ONLINE</p> -->
+                </div>
+
+                <div class="discord">
+                    <img src="./assets/images/discord.svg" alt="">
+                    <p>DISCORD.GG/FIVECOMMUNITY</p>
+                </div>
+            </div>
+            <div class="infos">
+
+                <div id="cupom-hud" class="cupom">
+
+                    <div class="content">
+                        <span>CUPOM DE DESCONTO</span>
+                        <p>WIPE35</p>
+                    </div>
+
+                    <div class="icon">
+                        <svg class="border" width="37" height="40" viewBox="0 0 37 40" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M14.7145 37.2048L5.63955 31.9654C3.1455 30.5254 1.6091 27.8643 1.6091 24.9844L1.6091 14.5055C1.6091 11.6257 3.1455 8.96454 5.63955 7.5246L14.7145 2.28515C17.2086 0.845211 20.2814 0.845211 22.7754 2.28515L31.8504 7.5246C34.3445 8.96454 35.8809 11.6257 35.8809 14.5056V24.9844C35.8809 27.8643 34.3445 30.5254 31.8504 31.9654L22.7754 37.2048C20.2814 38.6448 17.2086 38.6448 14.7145 37.2048Z"
+                                stroke="#fff" stroke-width="1.6596" />
+                        </svg>
+                        <img src="assets/images/cupom.svg" alt="">
+                    </div>
+                </div>
+
+
+                <div class="main mic">
+                    <img class="border" src="./assets/images/border-top-middle.svg" alt="">
+                    <div class="content">
+                        <svg class="icon" width="11" height="14" viewBox="0 0 11 14" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path class="icon-mic"
+                                d="M2.27365 4.7301C2.27365 3.99849 2.22347 3.26688 2.28426 2.53718C2.40724 1.07397 3.69012 0.0115436 5.26845 9.23403e-05C6.84677 -0.0113589 8.18478 1.04343 8.27242 2.50792C8.36042 4.00041 8.36042 5.49605 8.27242 6.98854C8.23237 7.69202 7.88378 8.35244 7.3032 8.82479C6.72262 9.29713 5.9575 9.54279 5.17585 9.50782C3.50493 9.42702 2.2779 8.26345 2.26164 6.73344C2.25457 6.06545 2.26164 5.39746 2.26164 4.7301H2.27365Z"
+                                fill="white" />
+                            <path class="icon-mic"
+                                d="M6.04382 11.501C6.04382 11.9463 6.04736 12.3611 6.04382 12.7733C6.03817 13.2581 5.74625 13.5698 5.29813 13.5787C4.83941 13.5883 4.52841 13.2657 4.52063 12.7676C4.52063 12.3554 4.52063 11.9406 4.52063 11.5143C4.30859 11.4673 4.11916 11.4259 3.92903 11.3807C2.82886 11.118 1.85228 10.5427 1.14449 9.74032C0.436701 8.93799 0.0354987 7.95147 0.000531076 6.92747C-0.0143121 6.45796 0.283258 6.12906 0.733501 6.11316C1.18374 6.09726 1.49121 6.40453 1.52231 6.88357C1.63187 8.57009 2.81508 9.81 4.61747 10.1319C6.77538 10.5136 8.9234 9.00969 9.03437 7.0369C9.03437 6.97328 9.03437 6.90966 9.04285 6.84604C9.0789 6.39435 9.40404 6.09471 9.8359 6.1138C10.2678 6.13288 10.5816 6.45161 10.5604 6.90139C10.4897 8.35633 9.84721 9.55935 8.59543 10.4894C7.86529 11.0308 7.01358 11.347 6.04382 11.501Z"
+                                fill="white" />
+                        </svg>
+
+                        <div class="ball-mic active-mic"></div>
+                        <div class="ball-mic active-mic"></div>
+                        <div class="ball-mic"></div>
+                    </div>
+                </div>
+
+                <div class="main radio">
+                    <img class="border" src="./assets/images/border-top-middle.svg" alt="">
+                    <div class="content">
+                        <img class="icon" src="./assets/images/radio.svg" alt="">
+
+                        <p class="freq">556</p>
+                    </div>
+                </div>
+
+
+                <div class="main timer">
+                    <img class="border" src="./assets/images/border-top-middle.svg" alt="">
+                    <div class="content">
+                        <img class="icon" src="./assets/images/timer.svg" alt="">
+
+                        <p class="hour">00:00</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="north_assault assaultNorth">
+                <div class="content">
+                    <b>Assalto 24h Norte</b>
+                </div>
+
+
+                <div class="icon">
+                    <img src="assets/images/assault.svg" alt="">
+                </div>
+            </div>
+
+            <div class="assault">
+                <div class="content">
+                    <b>Assalto Liberado!</b>
+                    <p>23:00 - 05:00</p>
+                </div>
+
+
+                <div class="icon">
+                    <img src="assets/images/assault.svg" alt="">
+                </div>
+            </div>
+
+            <div class="kidnapping">
+                <div class="content">
+                    <b>Sequestro Liberado!</b>
+                    <p>23:00 - 05:00</p>
+                </div>
+
+
+                <div class="icon">
+                    <img src="assets/images/assault.svg" alt="">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="leftInfos">
+            <div id="date" class="date">
+                <img src="./assets/images/date.svg" alt="">
+                <p>29/05/2024</p>
+            </div>
+
+            <div id="id" class="id">
+                <img src="./assets/images/id.svg" alt="">
+                <p>2222</p>
+            </div>
+        </div>
+
+        <div class="safezone">
+            <img src="./assets/images/notifys/safezone.svg" alt="">
+
+            <p>Safezone</p>
+        </div>
+
+        <div class="playerNoVehicle">
+            <div class="weapon">
+
+                <div class="ammu">
+                    <img src="./assets/images/ammunition.svg" alt="">
+                    <b>12</b>
+                    <p>30</p>
+                </div>
+
+
+                <div class="icon">
+                    <div class="mask"></div>
+                    <img src="./assets/images/weapons/-1063057011.png" alt="">
+                </div>
+            </div>
+
+            <div class="contentPlayer">
+                <div class="player life">
+                    <img class="border" src="./assets/images/border-player.svg" alt="">
+                    <div class="progressContent progressLife">
+                        <span></span>
+                        <div class="extra"></div>
+                    </div>
+                    <div class="icon">
+                        <img src="./assets/images/life.svg" alt="">
+                    </div>
+                </div>
+
+                <div class="player armour">
+                    <img class="border" src="./assets/images/border-player.svg" alt="">
+                    <div class="progressContent progressArmour">
+                        <span></span>
+                        <div class="extra"></div>
+                    </div>
+                    <div class="icon">
+                        <img src="./assets/images/armour.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="playerInVehicle">
+            <div class="weapon">
+
+                <div class="ammu">
+                    <img src="./assets/images/ammunition.svg" alt="">
+                    <b>12</b>
+                    <p>30</p>
+                </div>
+
+
+                <div class="icon">
+                    <div class="mask"></div>
+                    <img src="./assets/images/weapons/-1063057011.png" alt="">
+                </div>
+            </div>
+
+            <div class="vehicle">
+                <img src="./assets/images/border-velocimeter.png" alt="" class="border-velocimeter">
+                <img src="./assets/images/ornamentVelocimeter.png" alt="" class="ornament-velocimeter">
+
+                <div class="player life">
+                    <img src="./assets/images/border-life-vehicle.png" alt="" class="border">
+
+                    <div class="icon">
+                        <img src="./assets/images/life.svg" alt="">
+                    </div>
+
+                    <svg class="progress-life" width="40" height="43" viewBox="0 0 40 43" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path class="progress-life-path"
+                            d="M23.9535 39.453C21.4783 40.8821 18.4287 40.8821 15.9535 39.453L6.19995 33.8218C3.72474 32.3927 2.19995 29.7517 2.19995 26.8936L2.19995 15.6312C2.19995 12.7731 3.72474 10.1321 6.19995 8.70299L15.9535 3.0718C18.4287 1.64273 21.4783 1.64273 23.9535 3.0718L33.707 8.703C36.1822 10.1321 37.707 12.7731 37.707 15.6312V26.8936C37.707 29.7517 36.1822 32.3927 33.707 33.8218L23.9535 39.453Z"
+                            stroke="#ff4d4d" stroke-width="3.5" />
+                    </svg>
+
+                    <!-- <div class="progress progressLife">
+                        <span></span>
+                    </div> -->
+                </div>
+
+                <div class="player armour">
+                    <img src="./assets/images/border-life-vehicle.png" alt="" class="border">
+
+                    <div class="icon">
+                        <img src="./assets/images/armour.svg" alt="">
+                    </div>
+
+
+                    <svg class="progress-armour" width="40" height="43" viewBox="0 0 40 43" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path class="progress-armour-path"
+                            d="M23.9535 39.453C21.4783 40.8821 18.4287 40.8821 15.9535 39.453L6.19995 33.8218C3.72474 32.3927 2.19995 29.7517 2.19995 26.8936L2.19995 15.6312C2.19995 12.7731 3.72474 10.1321 6.19995 8.70299L15.9535 3.0718C18.4287 1.64273 21.4783 1.64273 23.9535 3.0718L33.707 8.703C36.1822 10.1321 37.707 12.7731 37.707 15.6312V26.8936C37.707 29.7517 36.1822 32.3927 33.707 33.8218L23.9535 39.453Z"
+                            stroke="#5EB2FF" stroke-width="3.5" />
+                        <path class="progress-armour-extra"
+                            d="M23.9535 39.453C21.4783 40.8821 18.4287 40.8821 15.9535 39.453L6.19995 33.8218C3.72474 32.3927 2.19995 29.7517 2.19995 26.8936L2.19995 15.6312C2.19995 12.7731 3.72474 10.1321 6.19995 8.70299L15.9535 3.0718C18.4287 1.64273 21.4783 1.64273 23.9535 3.0718L33.707 8.703C36.1822 10.1321 37.707 12.7731 37.707 15.6312V26.8936C37.707 29.7517 36.1822 32.3927 33.707 33.8218L23.9535 39.453Z"
+                            stroke="#FFDD57" stroke-width="3.5" />
+                    </svg>
+                </div>
+
+                <div class="progress-car-mask">
+                    <svg class="progress-car" width="99" height="107" viewBox="0 0 99 107" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M60.1045 100.29C53.5424 104.079 45.4576 104.079 38.8955 100.29L14.1794 86.0203C7.6173 82.2317 3.5749 75.23 3.5749 67.6528L3.5749 39.113C3.5749 31.5358 7.6173 24.5342 14.1794 20.7456L38.8955 6.47569C45.4576 2.68707 53.5424 2.68707 60.1045 6.47569L84.8206 20.7456C91.3827 24.5342 95.4251 31.5358 95.4251 39.1131V67.6528C95.4251 75.23 91.3827 82.2317 84.8206 86.0203L60.1045 100.29Z"
+                            stroke="#fff" stroke-opacity="0.5" stroke-width="3.01064" />
+                        <path class="progress-car-path"
+                            d="M84.8233 20.858C91.387 24.6476 95.4305 31.651 95.4305 39.2301V67.7699C95.4305 75.349 91.387 82.3524 84.8233 86.142L60.1071 100.412C53.5434 104.201 45.4566 104.201 38.8929 100.412L14.1767 86.142C7.613 82.3524 3.56958 75.349 3.56958 67.7699L3.56958 39.2301C3.56958 31.651 7.613 24.6476 14.1767 20.858L38.8929 6.58814C45.4566 2.79858 53.5434 2.79858 60.1072 6.58815L84.8233 20.858Z"
+                            stroke="#4D8CFF" stroke-width="6" />
+                    </svg>
+                </div>
+
+                <img src="./assets/images/pointer.png" alt="" class="pointer">
+
+                <div class="icons-vehicle">
+                    <img src="./assets/images/seatbelt.svg" alt="" class="seatbelt">
+                    <img src="./assets/images/doors.svg" alt="" class="doors">
+                </div>
+                <div class="infosVehicle">
+                    <p>KM/H</p>
+                    <b class="speed">210</b>
+                    <div class="gear">
+                        <img src="./assets/images/ornament-gear.svg" alt="">
+                        <p>1</p>
+                    </div>
+                </div>
+
+                <div class="fuel">
+                    <img src="./assets/images/fuel.svg" alt="">
+                    <div class="progress progressFuel">
+                        <span></span>
+                    </div>
+                </div>
+
+                <div class="engine">
+                    <img src="./assets/images/engine.svg" alt="">
+                    <div class="progress progressEngine">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="recruitmentContainer">
+            <img src="./assets/images/intertn-details-recruitment.png" class="intern-details" alt="">
+            <div class="icon">
+                <img src="./assets/images/notifys/recruitment_icon.svg" alt="">
+            </div>
+            <div class="recruitment_content">
+                <h1 class="recruitment_title">RECRUTAMENTO</h1>
+                <h1 class="recruitment_text">VEJA AS VAGAS PARA FACÇÕES! DIGITE: <b>/RECRUTAMENTO</b></h1>
+                <p class="recruitment_desc">Para remover a notificação, digite <b>/fechar</b></p>
+            </div>
+        </div>
+    </div>
+    <div id="notifys"></div>
+    <div id="notifysCenter"></div>
+    <div id="notifysAdm"></div>
+    <div id="notifysRecruitment"></div>
+    <div id="notifysAnnounce"> </div>
+    <div id="itemNotifys"></div>
+    <div id="notifysFac"></div>
+
+    <section class="iframe">
+        <iframe src="" frameborder="0"></iframe>
+        <div class="close">
+            <img src="./assets/images/notifys/negado.svg" alt="">
+        </div>
+    </section>
+
+
+    <div class="modalF3">
+        <img class="intern-details" src="./assets/images/intern-details-f3.png" alt="">
+        <div class="content">
+            <h1>TELEPORTAR</h1>
+            <p>Você tem certeza que deseja se <b>teleportar</b> para o local?</p>
+            <div class="buttons">
+                <button onclick="teleportPlayer()">Teleportar</button>
+                <button onclick="closeModalF3()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+    <!-- <section class="vehicle-doors"></section> -->
+
+    <script src="./assets/scripts/config.js"></script>
+    <script src="./assets/scripts/notify.js"></script>
+    <script src="./assets/scripts/script.js"></script>
+    <script src="./assets/scripts/less.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/less"></script>
+</body>
+
+</html>

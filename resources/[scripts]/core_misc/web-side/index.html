@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decrypt Radar</title>
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="root">
+        <section class="radar-section">
+            <header class="radar-header">RADAR FRONTAL</header>
+            <div class="radar-content">
+                <div class="velocity-info">
+                    <label>VELOCIDADE</label>
+                    <strong id="front-velocity">0</strong>
+                    <span>KM/H</span>
+                </div>
+                <div class="vehicle-info">
+                    <div class="vehicle-detail">
+                        <label>MODELO:</label>
+                        <strong id="front-model">-</strong>
+                    </div>
+                    <div class="vehicle-detail">
+                        <label>PLACA:</label>
+                        <strong id="front-plate">-</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="radar-section">
+            <header class="radar-header">RADAR TRASEIRO</header>
+            <div class="radar-content">
+                <div class="velocity-info">
+                    <label>VELOCIDADE</label>
+                    <strong id="rear-velocity">0</strong>
+                    <span>KM/H</span>
+                </div>
+                <div class="vehicle-info">
+                    <div class="vehicle-detail">
+                        <label>MODELO:</label>
+                        <strong id="rear-model">-</strong>
+                    </div>
+                    <div class="vehicle-detail">
+                        <label>PLACA:</label>
+                        <strong id="rear-plate">-</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>

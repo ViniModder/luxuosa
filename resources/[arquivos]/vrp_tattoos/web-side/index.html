@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>#creative</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap"
+		rel="stylesheet">
+</head>
+
+<body>
+	<div id="tattoo-container">
+		<div class="title">
+			<div class="title-text">
+				<div class="title-text-bg">
+					<b>TATUAGEM</b>
+				</div>
+			</div>
+			<p>Personalize seu corpo com artes incríveis e bonitas, torne-se único!</p>
+		</div>
+		<div class="column">
+			<div class="categories">
+				<div class="category" category-name="head">
+					<img src="./images/head.png" alt="">
+				</div>
+				<div class="category" category-name="rightarm">
+					<img src="./images/arm-left.png" alt="">
+				</div>
+				<div class="category" category-name="leftarm">
+					<img src="./images/arm-right.png" alt="">
+				</div>
+				<div class="category" category-name="torso">
+					<img src="./images/chest.png" alt="">
+				</div>
+				<div class="category" category-name="rightleg"> 
+					<img src="./images/leg-left.png" alt="">
+				</div>
+				<div class="category" category-name="leftleg">]
+					<img src="./images/leg-right.png" alt="">
+				</div>
+				<!-- <div class="category" category-name="hairs"></div> -->
+			</div>
+		</div>
+
+
+		<div class="category-items">
+			<!-- <div class="category-title" id="category-name">...</div> -->
+			<div id="reset">REMOVER TODAS TATUAGENS</div>
+			<div id="items"></div>
+			<div class="bttns">
+				<div id="save" onclick="openModal()">CONFIRMAR</div>
+				<div id="cancel" onclick="closeNotSave()">SAIR</div>
+			</div>
+		</div>
+
+
+	</div>
+	<div class="modal-tattoo">
+		<div class="modal-title">
+			<p>CONFIRMAR</p>
+		</div>
+		<p>Deseja confirmar e salvar seu novo visual?</p>
+		<div class="modal-bttns">
+			<button onclick="closeModal()">VOLTAR</button>
+			<button class="modal-confirm" onclick="save()">CONFIRMAR</button>
+		</div>
+	</div>
+
+	<script src="nui://game/ui/jquery.js"></script>
+	<script src="script.js" type="text/javascript"></script>
+</body>
+
+</html>

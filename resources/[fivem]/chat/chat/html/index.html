@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>#creative</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="vendor/flexboxgrid.6.3.1.min.css" rel="stylesheet"></link>
+    <link href="vendor/animate.3.5.2.min.css" rel="stylesheet"></link>
+    <link href="index.css" rel="stylesheet"></link>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="vendor/vue.2.3.3.min.js" type="text/javascript"></script>
+    <script src="config.default.js" type="text/javascript"></script>
+    <script src="config.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script type="text/x-template" id="app_template">
+        <div id="app">
+            <div class="chat-window" :style="this.style" :class="{ 'fadeOutUp animated': !showWindow, 'hidden': shouldHide }">
+                <div class="chat-messages" ref="messages">
+                  <message v-for="msg in messages" :templates="templates" :multiline="msg.multiline" :args="msg.args" :color="msg.color" :template="msg.template" :template-id="msg.templateId" :type="msg.type" :key="msg">
+                  </message>
+                </div>
+            </div>
+            <div class="chat-input" v-show="showInput">
+              <textarea id="emojiinput" v-model="message" maxlength="350" ref="input" style="resize: none" type="text" autofocus spellcheck="false" @keyup.esc="hideInput" @keyup="keyUp" @keydown="keyDown" @keypress.enter.prevent="send"></textarea>
+              <button id="showemoji" class="prefix2">😍</button>
+              <button id="sendmsg" class="prefix" v-on:click="send">
+                <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.44177 1.07996C0.701453 0.849849 1.0734 0.796919 1.38696 0.94545L17.8434 8.74058C18.1458 8.88387 18.3387 9.18862 18.3387 9.52333C18.3387 9.85804 18.1458 10.1628 17.8434 10.3061L1.38696 18.1012C1.0734 18.2497 0.701453 18.1968 0.44177 17.9667C0.182088 17.7366 0.0847862 17.3737 0.194506 17.0446L2.70159 9.52333L0.194506 2.00209C0.0847862 1.67293 0.182088 1.31006 0.44177 1.07996ZM4.23883 10.3895L2.4797 15.6668L13.6208 10.3895H4.23883ZM13.6208 8.65721H4.23883L2.4797 3.37983L13.6208 8.65721Z" fill="white"/>
+                </svg>                  
+              </button>
+            </div>
+            <div style="display: flex; justify-content: end; width: 33.1%;">
+              <emoji-picker locale="pt_BR" i18n="pt_BR" id="emojis" class="dark" style="margin-top: 15px; display: none;"></emoji-picker>
+            </div>
+            
+            <suggestions :message="message" :suggestions="suggestions">
+            </suggestions>
+        </div>
+    </script>
+
+    <script type="text/x-template" id="message_template">
+        <div v-if="" class="tags_message">
+          <div class="message_head">
+            <div v-if="type && type !== 'killfeed' && type !== 'chamado'" :class="type" class="tag">
+              <img :src="'./assets/' + type + '.svg'" alt="">
+              <p>{{type}}</p>
+            </div>  
+          </div>
+          <div class="msg multiline" :class="{ 'box2': type === 'box' || type === 'box-recive' }">
+                <span v-html="textEscaped"></span>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/x-template" id="suggestions_template">
+        <div class="suggestions-wrap" v-show="currentSuggestions.length > 0">
+            <ul class="suggestions">
+                <li class="suggestion" v-for="s in currentSuggestions">
+                    <p>
+                        <span :class="{ 'disabled': s.disabled }">
+              {{s.name}}
+            </span>
+                        <span class="param" v-for="(p, index) in s.params" :class="{ 'disabled': p.disabled }">
+              [{{p.name}}]
+            </span>
+                    </p>
+                    <small class="help">
+            <template v-if="!s.disabled">
+              {{s.help}}
+            </template>
+            <template v-for="p in s.params" v-if="!p.disabled">
+              {{p.help}}
+            </template>
+          </small>
+                </li>
+            </ul>
+        </div>
+    </script>
+
+    <script type="text/javascript" src="./Suggestions.js"></script>
+    <script type="text/javascript" src="./Message.js"></script>
+    <script type="text/javascript" src="./App.js"></script>
+
+    <script type="text/javascript">
+        window.post = (url, data) => {
+            var request = new XMLHttpRequest();
+            request.open('POST', url, true);
+            request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+            request.send(data);
+        }
+
+        const instance = new Vue({
+            el: '#app',
+            render: h => h(APP),
+        });
+
+        window.emulate = (type, detail = {}) => {
+            detail.type = type;
+            window.dispatchEvent(new CustomEvent('message', {
+                detail,
+            }));
+        };
+            document.querySelector('emoji-picker').addEventListener('emoji-click', event => emojipicker(document.getElementById('emojiinput'), event.detail.unicode));
+                document.getElementById("showemoji").addEventListener("click", function () {
+                    if (document.getElementById("emojis").style.display == "none") {
+                        document.getElementById("emojis").style.display = "block";
+                    } else {
+                        document.getElementById("emojis").style.display = "none";
+                    };
+                });
+            
+            let browserSupportsTextareaTextNodes;
+
+                /**
+                 * @param {HTMLElement} input          
+                 * @return {boolean}
+                 */
+                function canManipulateViaTextNodes(input) {
+                  if (input.nodeName !== "TEXTAREA") {
+                    return false;
+                  }
+                  if (typeof browserSupportsTextareaTextNodes === "undefined") {
+                    const textarea = document.createElement("textarea");
+                    textarea.value = 1;
+                    browserSupportsTextareaTextNodes = !!textarea.firstChild;
+                  }
+                  return browserSupportsTextareaTextNodes;
+                }
+                
+                /**
+                 * @param {HTMLTextAreaElement|HTMLInputElement} input
+                 * @param {string} text
+                 * @returns {void}
+                 */
+                 function emojipicker(input, text) {
+                  // Most of the used APIs only work with the field selected
+                  input.focus();
+                
+                  // IE 8-10
+                  if (document.selection) {
+                    const ieRange = document.selection.createRange();
+                    ieRange.text = text;
+                
+                    // Move cursor after the inserted text
+                    ieRange.collapse(false /* to the end */);
+                    ieRange.select();
+                
+                    return;
+                  }
+                
+                  // Webkit + Edge
+                  const isSuccess = document.execCommand("insertText", false, text);
+                  if (!isSuccess) {
+                    const start = input.selectionStart;
+                    const end = input.selectionEnd;
+                    // Firefox (non-standard method)
+                    if (typeof input.setRangeText === "function") {
+                      input.setRangeText(text);
+                    } else {
+                      // To make a change we just need a Range, not a Selection
+                      const range = document.createRange();
+                      const textNode = document.createTextNode(text);
+                
+                      if (canManipulateViaTextNodes(input)) {
+                        let node = input.firstChild;
+                
+                        // If textarea is empty, just insert the text
+                        if (!node) {
+                          input.appendChild(textNode);
+                        } else {
+                          // Otherwise we need to find a nodes for start and end
+                          let offset = 0;
+                          let startNode = null;
+                          let endNode = null;
+                
+                          while (node && (startNode === null || endNode === null)) {
+                            const nodeLength = node.nodeValue.length;
+                
+                            // if start of the selection falls into current node
+                            if (start >= offset && start <= offset + nodeLength) {
+                              range.setStart((startNode = node), start - offset);
+                            }
+                
+                            // if end of the selection falls into current node
+                            if (end >= offset && end <= offset + nodeLength) {
+                              range.setEnd((endNode = node), end - offset);
+                            }
+                
+                            offset += nodeLength;
+                            node = node.nextSibling;
+                          }
+                
+                          // If there is some text selected, remove it as we should replace it
+                          if (start !== end) {
+                            range.deleteContents();
+                          }
+                        }
+                      }
+                
+                      // If the node is a textarea and the range doesn't span outside the element
+                      //
+                      // Get the commonAncestorContainer of the selected range and test its type
+                      // If the node is of type `#text` it means that we're still working with text nodes within our textarea element
+                      // otherwise, if it's of type `#document` for example it means our selection spans outside the textarea.
+                      if (canManipulateViaTextNodes(input) && range.commonAncestorContainer.nodeName === '#text') {
+                        // Finally insert a new node. The browser will automatically split start and end nodes into two if necessary
+                        range.insertNode(textNode);
+                      } else {
+                        // If the node is not a textarea or the range spans outside a textarea the only way is to replace the whole value
+                        const value = input.value;
+                        input.value = value.slice(0, start) + text + value.slice(end);
+                      }
+                    }
+                
+                    // Correct the cursor position to be at the end of the insertion
+                    input.setSelectionRange(start + text.length, start + text.length);
+                
+                    // Notify any possible listeners of the change
+                    const e = document.createEvent("UIEvent");
+                    e.initEvent("input", true, false);
+                    input.dispatchEvent(e);
+                  }
+                }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bennys</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
+        integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="vue.prod.js"></script>
+</head>
+
+
+
+<body id="body">
+    <div id="bennys">
+        <div class="hide" v-show="hide">
+            <div class="custom_bennys" v-show="!painel">
+                <div class="top_bennys">
+                    <div class="menu_bennys">
+                        <img src="images/logo.png" alt="" class="logo_bennys">
+                        
+                        <input type="text" class="search" @input="search" v-model="searchParts" placeholder="Digite o nome para pesquisar ">
+                        <div class="list_menu_bennys">
+                            <div class="item_menu_bennys"  v-show="key !== 'Rodas Dianteira'"
+                                v-for="(item,key,index) in renderItens"
+                                :class="'item_menu'+index, {'select_menu' : index == 0 }"
+                                v-on:click="loadSubItems(key, 'item_menu'+index)">   
+                                <img :src="itemMenu(key)" alt="" class="img_item_bennys">
+                                <div class="name_item_bennys">
+                                    {{key}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button_cart_bennys" @click="showCart">
+                            <img src="images/cart.svg" alt="">
+                            CARRINHO DE COMPRAS
+                        </div>
+                        <div class="press_h" v-on:click="cameraState()">
+                            PRESSIONE <b>H</b> PARA {{((camState) ? 'PRENDER' : 'LIBERAR')}} A CAMERA
+                        </div>
+                    </div>
+
+                    <div class="cart_bennys" v-show="openCart">
+                        <img src="images/cartLogo.png" alt="" class="cartLogo_bennys">
+                        <div class="list_cart_bennys">
+                            <div class="item_cart_bennys" v-show="item.show" v-for="item,part in cart">
+                                <div class="left_item_cart">
+                                    <img :src="itemMenu(part)" class="img_item_cart_bennys" />
+                                    <div class="name_item_cart_bennys">{{item.label || part}}</div>
+                                </div>
+                                <div class="right_item_cart">
+                                    <div class="value_cart_bennys">R${{item.price}}</div>
+                                    <img src="images/close.svg" @click="changeCart('rem',part)" alt=""
+                                        class="close_bennys">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttons_cart_bennys">
+                            <div class="close_cart_bennys" @click="close()">
+                                <img src="images/close_white.svg" alt="" class="img_close_cart_bennys">
+                                FECHAR
+                            </div>
+                            <div class="total_cart_bennys">
+                                <img src="images/total.svg" alt="" class="img_total_cart_bennys">
+                                R${{cartPrice}}
+                            </div>
+                            <div class="salve_cart_bennys" @click="save()">
+                                <img src="images/save.svg" alt="" class="img_close_cart_bennys">
+                                SALVAR
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="list_father">
+                    <div class="arrow_left" onclick="arrowLeft()"> &ltri; </div>
+                    <div class="sub_menu_bennys" v-show="selectPart && !colorTypeSelection && !colorSelection">
+                        <div class="list_sub_menu_bennys" id="list_sub_menu_bennys" >
+                            <div class="item_sub_menu_bennys" v-show="selectPart !== 'Tipo de Roda'" @click="changeMod(-1)">
+                                <div class="index_item_sub_menu_bennys">
+                                    0
+                                </div>
+                                <img :src="itemMenu(selectPart)" class="img_item_sub_menu_bennys" />
+                            </div>
+                            <div class="item_sub_menu_bennys" v-for="item,index in subMenus"
+                                v-bind:class="{'item_sub_menu_bennys_active': selectedIndex == index}" @click="changeMod(index,selectPart)">
+                                <div class="index_item_sub_menu_bennys">
+                                    {{((selectPart == "Tipo de Roda" ? item[0] : index+1))}}
+                                </div>
+                                <img :src="itemMenu(selectPart)" class="img_item_sub_menu_bennys" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub_menu_bennys" v-show="paintingSelection === true">
+                        <div class="list_sub_menu_bennys" id="list_sub_menu_bennys" >
+                            <div class="item_sub_menu_bennys" v-for="item,index in colorTypes"
+                                @click="paintingSelection = index">
+                                <div class="index_item_sub_menu_bennys">
+                                    {{index}}
+                                </div>
+                                <img :src="itemMenu('Cores')" class="img_item_sub_menu_bennys" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub_menu_bennys" v-show="paintingType === true">
+                        <div class="list_sub_menu_bennys" id="list_sub_menu_bennys" >
+                            <div class="item_sub_menu_bennys" @click="paintingType = 'Primária';paintingSelection = true">
+                                <div class="index_item_sub_menu_bennys">
+                                    Primária
+                                </div>
+                                <img :src="itemMenu('Cores')" class="img_item_sub_menu_bennys" />
+                            </div>
+                            <div class="item_sub_menu_bennys" @click="paintingType = 'Secundária';paintingSelection = true">
+                                <div class="index_item_sub_menu_bennys">
+                                    Secundária
+                                </div>
+                                <img :src="itemMenu('Cores')" class="img_item_sub_menu_bennys" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub_menu_bennys"
+                        v-show="paintingSelection && colorTypes[paintingSelection] && !selectPart &&  !colorSelection">
+                        <div class="list_sub_menu_bennys" id="list_sub_menu_bennys" >
+                            <div class="item_sub_menu_bennys"
+                                v-for="item,index in colorTypes[paintingSelection]?.colorsIndex"
+                                @click="changePaint(item, index, paintingType)">
+                                <div class="index_item_sub_menu_bennys">
+                                    {{index+1}}
+                                </div>
+                                <img :src="itemMenu('Cores')" class="img_item_sub_menu_bennys" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub_menu_bennys" v-show="colorTypeSelection">
+                        <div class="list_sub_menu_bennys" id="list_sub_menu_bennys" >
+                            <div class="item_sub_menu_bennys" @click="changeMenuColor('Primária')">
+                                <div class="index_item_sub_menu_color_bennys">
+                                    PRIMARIA
+                                </div>
+                                <img :src="itemMenu('Cores')" class="img_item_sub_menu_bennys" />
+                            </div>
+
+                            <div class="item_sub_menu_bennys" @click="changeMenuColor('Secundária')">
+                                <div class="index_item_sub_menu_color_bennys">
+                                    SECUNDARIA
+                                </div>
+                                <img :src="itemMenu('Cores')" class="img_item_sub_menu_bennys" />
+                            </div>
+
+                            <div class="item_sub_menu_bennys" @click="changeMenuColor('Neon')">
+                                <div class="index_item_sub_menu_color_bennys">
+                                    NEON
+                                </div>
+                                <img :src="itemMenu('Neon')" class="img_item_sub_menu_bennys" />
+                            </div>
+
+                            <div class="item_sub_menu_bennys" @click="changeMenuColor('Fumaça Pneu')">
+                                <div class="index_item_sub_menu_color_bennys">
+                                    FUMAÇA PNEU
+                                </div>
+                                <img :src="itemMenu('Fumaça Pneu')" class="img_item_sub_menu_bennys" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub_menu_bennys" v-show="colorSelection && !colorTypeSelection">
+                        <div class="list_sub_menu_bennys" id="list_sub_menu_bennys" >
+                            <div class="item_sub_menu_bennys">
+                                <div class="index_item_sub_menu_color_bennys">
+                                    Cor
+                                </div>
+                                <input type="color" name="" ref="ColorInput" @input="updateColor(colorType, $event)">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="arrow_right" onclick="arrowRight()"> &rtri; </div>
+                </div>
+            </div>
+                
+                
+        </div>
+        <div class="painel_bennys" v-show="painel">
+            <div class="content_bennys">
+                <div class="top2_bennys">
+
+                    <img src="images/logo.png" alt="" class="logo2_bennys">
+                    <p>CONTROLE DE PEDIDOS</p>
+                </div>
+                <hr>
+                <div class="legenda_bennys">
+                    <div class="item_menu_bennys">
+                        <div class="left_bennys">
+                            <div class="on_bennys"></div>ATENDIMENTO
+                        </div>
+                        <div class="left_bennys">
+                            <div class="middle_bennys"></div> DENTRO DA OFICINA
+                        </div>
+                        <div class="left_bennys">
+                            <div class="off_bennys"></div> FORA DA OFICINA
+                        </div>
+                    </div>
+                </div>
+                <div class="legenda_bennys">
+                    <h3>LISTA DE PEDIDOS</h3>
+                    <div class="lista_bennys">
+                        <div :class="{off: item.status !== 'middle_bennys'}" class="item_pedidos_bennys"
+                            v-for="item,index of orders">
+                            <div :class="item.status"></div>
+                            <div class="client_name_bennys">{{item.name}} {{item.firstname}} #{{item.user_id}}</div>
+                            <div class="name_vehicle_bennys">{{item.vehicle}}</div>
+
+                            <div class="item_button_bennys" :class="{off: item.status !== 'middle_bennys'}"
+                                @click="getOrderDetails(item.user_id)">
+                                VERIFICAR
+                            </div>
+                            <div class="remove_button_bennys" :class="{off: item.status === 'on_bennys'}" @click="cancelOrder(item.user_id)">
+                                REMOVER PEDIDO
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal_confirm" v-show="orderModal">
+            <div class="content_bennys2">
+                <h1>Você realmente deseja atender esse pedido?</h1>
+                <div class="flex_bennys">
+                    <div class="info_modal">
+                        <h3>Informações Gerais</h3>
+                        <div class="modal_item">
+                            <b>Nome:</b>
+                            <span>{{orders[orderModal]?.name}} {{orders[orderModal]?.firstname}}</span>
+                        </div>
+                        <div class="modal_item">
+                            <b>Veiculo:</b>
+                            <span>{{orders[orderModal]?.vehicle}}</span>
+                        </div>
+                        <div class="modal_item">
+                            <b>ID do pedido:</b>
+                            <span>#{{orders[orderModal]?.id}}</span>
+                        </div>
+
+                        <div class="modal_item">
+                            <b>Passaporte:</b>
+                            <span>{{orders[orderModal]?.user_id}}</span>
+                        </div>
+                    </div>
+                    <div class="info_modal itens_necessair">
+                        <h3>Itens necessarios</h3>
+                        <div class="list_ncessair">
+                            <div :class="{'has_item': item.required_amount <= item.amount, 'no_item':item.required_amount > item.amount }"
+                                class="modal_item" v-for="item,index of showOrderItems" >
+                                <b>{{item.required_amount}}x</b>
+                                <span>{{index}}</span>
+                                <span> | {{item.item_tunning}}</span>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="info_modal confirm_modal">
+                        <div class="modal_item">
+                            <b>Você recebe:</b> <br>
+                            <span>R$ {{orderDetails?.price}}</span>
+                        </div>
+                        <div class="modal_item">
+                            <b>Tempo de serviço:</b> <br>
+                            <span>{{orderDetails?.time}} segundos</span>
+                        </div>
+
+                        <div class="buttons_modal_bennys">
+                            <div class="close_cart_bennys" @click="orderModal = false">
+                                <img src="images/close_white.svg" alt="" class="img_close_cart_bennys">
+                                CANCELAR
+                            </div>
+
+                            <div class="salve_cart_bennys" @click="answerOrder(orderModal)">
+                                <img src="images/save.svg" alt="" class="img_close_cart_bennys">
+                                CONCLUIR
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    </div>
+    <script src="script.js "></script>
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    orderModal: false,
+
+                    painel: false,
+                    hide: false,
+                    selectPart: false,
+                    colorTypeSelection: false,
+                    colorSelection: false,
+                    colorType: undefined,
+                    subMenus: [],
+                    searchVehicles: '',
+                    openCart: false,
+                    oldCustomization: {},
+
+                    price: 0,
+                    selectedIndex: 0,
+                    paintingSelection: false,
+                    paintingType: false,
+                    menus: [],
+                    renderItens: [],
+                    colorTypes: {},
+
+                    oldMod: undefined,
+                    cart: {},
+                    cartPrice: 0,
+                    increasedPrice: undefined,
+
+                    camState: false,
+                    orders: { },
+                    orderDetails: { price: 0, items: [] },
+                    showOrderItems : {},
+                    renderParts: [],
+                    searchParts: '',
+
+
+                    images: {
+                        'Arch Cover': 'paralamas-dianteiro',
+                        'Filtro de Ar': 'paralamas-dianteiro',
+                        'Aerofólio': 'aerofolio',
+                        'Speakers': 'speaker',
+                        'Shift leavers': 'shift-leavers',
+                        'Fumaça Pneu': 'wheel',
+                        'Rodas Dianteira': 'wheel',
+                        'Motor': 'motor',
+                        'Ornaments': 'enfeites',
+                        'Aerials': 'farol',
+                        'Buzina': 'buzina',
+                        'Parachoque Dianteiro': 'parachoque-dianteiro',
+                        'Parachoque Traseiro': 'parachoque-traseiro',
+                        'Neon': 'neon',
+                        'Pintura': 'cor',
+                        'Saias': 'saias',
+                        'Suspensão': 'suspensao',
+                        'Plaques': 'placa',
+                        'Escapamento': 'escapamento',
+                        'Roll cage': 'roll-cage',
+                        'Capô': 'teto',
+                        'Portas': 'door',
+                        'Para-lama': 'paralamas',
+                        'Tanque': 'tank',
+                        'Pneu a Prova de Bala': 'pneu',
+                        'Trunk': 'trunk',
+                        'Freios': 'freio',
+                        'Teto': 'teto',
+                        'Transmissão': 'transmissao',
+                        'Xenon': 'farol',
+                        'Turbo': 'turbo',
+                        'Bancos': 'banco',
+                        'Trim': 'saia',
+                        'Steeringwheel': '',
+                        'Rodas Traseira': 'wheel2',
+                        'Plate holder': 'placa',
+                        'Cores': 'cor',
+                        'Vanity plates': 'placa',
+                        'Decal': 'enfeites',
+                        'Vidro': 'Glass',
+                        'Struts': 'saia',
+                        'Janelas': 'janela',
+                        'Painel': 'interior',
+                        'Dial': 'interior',
+                        'Grelha': 'grille',
+                        'Hidraulica': 'paralamas-dianteiro',
+                        'Bloco de motor': 'motor',
+                        'Tipo de Roda': 'wheel',
+                        'Blindagem': 'blindagem',
+                    }
+                }
+            },
+            computed: {
+            },
+            methods:
+            {
+                async resetPage(){
+                    this.selectPart = false;
+                    this.colorTypeSelection = false;
+                    this.colorSelection = false;
+                    this.paintingSelection = false;
+                    this.paintingType = false;
+                },
+                async cancelOrder(id){
+                    await this.callback("cancelOrder", { user_id: id })
+                },
+                async answerOrder(id) {
+                    this.callback("answerOrder", { user_id: id })
+                    this.close()
+                },
+                async getOrderDetails(id) {
+                    this.orderModal = id;
+                    const result = await this.callback("getDetails", { user_id: id })
+                    const result2 = await this.callback("getDetails2", { user_id: id })
+                    this.orderDetails = result
+                    this.orderDetails.price = result2.cartPrices
+                    this.orderDetails.time = result2.time
+                    this.showOrderItems = {}
+                    this.orderDetails.forEach(element => {
+         
+                        if(this.showOrderItems[element.item]){
+                            this.showOrderItems[element.item].required_amount += element.required_amount
+                            this.showOrderItems[element.item].required_amount += element.item_tunning
+                        }else{
+                            this.showOrderItems[element.item] = element
+                        }
+                    });
+                    
+                },
+                async save() {
+                    let cartPrices = {}
+                    for (let key in this.cart) {
+                        
+                        cartPrices[key] = this.cart[key].price
+                    }
+                    const result = await this.callback("createOrder", {
+                        cart: this.cart,
+                        cartPrices: this.cartPrice
+                    })
+                    if (result.success) {
+                        this.close()
+                    }
+                },
+                showCart(){
+                    this.openCart = !this.openCart
+                },
+                search() {
+                    // this.menu = this.menu.filter(item => item.class == this.page )
+                    // this.menu = this.menu.filter()
+                    // this.renderItens = Object.entries(this.menus).filter(key => 
+                    if(this.searchParts.trim() !== "" && this.searchParts.length > 0){
+                        this.renderItens = Object.keys(this.menus).filter((key) => key.toLowerCase().startsWith(this.searchParts.toLowerCase())).
+                            reduce((cur, key) => { return Object.assign(cur, { [key]: this.menus[key] })}, {});
+                        return;
+                    }
+                    this.renderItens = this.menus;
+
+                    // this.renderParts = this.menus.filter(item => JSON.stringify(item))
+                    // this.renderVehicles = this.vehicles.filter(item => item.class == this.page && item.name.toLowerCase().startsWith(this.searchVehicles.toLowerCase()));
+                },
+                close() {
+                    this.cart = {}
+                    document.getElementsByTagName("body")[0].style.display = "none"
+                    this.hide = false
+                    this.painel = false
+                    this.orderModal = false
+                    this.selectPart = undefined
+                    this.callback("close", {})
+                },
+                async cameraState() {
+                    
+                    this.camState = !this.camState;
+                    if (this.camState)
+                        this.callback("cameraState", {});
+                },
+                async getColor(type) {
+                    const response = await this.callback("getVehicleCustom", { part: "Cores" })
+                    this.$refs.ColorInput.value = response["Cores"][type]
+                },
+                changeCart(action, item, price, index, data, increasedPrice) {
+                    if (item == "Tipo de Roda") return true;
+                    if (action == "rem") {
+                        
+                        if (!this.cart[item].data) {
+                            this.callback("changeMod", { index: this.cart[item].oldMod || this.oldCustomization[item], part: item })
+                        } else if (item.includes("Pintura")) {
+                            this.callback("changeMod", { index: this.oldCustomization["Pintura"][item.replace("Pintura ", "")], part: 'Pintura' })
+                        } else {
+                            this.callback("changeMod", { index: this.oldCustomization["Cores"][this.cart[item].data.type], part: 'Cores', payload: this.cart[item].data.type })
+                        }
+                        if (this.cart[item]) {
+                            this.selectedIndex = this.oldCustomization[item]
+                            delete this.cart[item];
+                        }
+                        this.cartPrice = Object.values(this.cart).reduce((a, b) => a + b.price, 0);
+                        return true
+                    }
+                    if (item.includes("Cor") && Object.keys(this.cart).includes(item.replace("Cor ", ""))) return
+                    if (this.cart[item] && index == this.cart[item].mod) {
+                        this.callback("changeMod", { index: -1, part: item })
+                        this.selectedIndex = -1
+                        delete this.cart[item]
+                        this.cartPrice = Object.values(this.cart).reduce((a, b) => a + b.price, 0);
+                        return false
+                    } else {
+                        this.cart[item] = {
+                            mod: index,
+                            show: !(item == "Pintura Primária" && this.cart['Pintura Secundária']) && !(item == "Pintura Secundária" && this.cart['Pintura Primária']),
+                            label: ((item).includes("Pintura")) ? "Pintura" : undefined,
+                            price: ((index > 0 && increasedPrice) ? price + (index * (increasedPrice || 0)) : price),
+                            oldMod: this.oldCustomization[item] || this.oldMod,
+                            data: data
+                        }
+                    }
+                    
+                    this.cartPrice = Object.values(this.cart).reduce((a, b) => a + b.price, 0);
+                    return true
+                },
+                loadItems: async function (payload) {
+                    let items = await this.callback("getMenu", {});
+                    this.colorTypes = items.colorTypes;
+                    delete items["colorTypes"];
+                    this.menus = items
+                    this.renderItens = items;
+                    this.open()
+                },
+                open: async function () {
+                    this.cartPrice = 0
+                    this.oldCustaomiztion = await this.callback("getVehicleCustom", {});
+                    $(document.getElementsByClassName("item_menu_bennys")[0]).click()
+                },
+                cameraControl: async function (index) {
+                    this.callback("setCamera", { part: index });
+                },
+                loadSubItems: async function (index, className) {
+                    
+                    this.cameraControl(index)
+                    this.selectPart = false;
+                    this.colorTypeSelection = false;
+                    this.colorSelection = false;
+                    this.paintingSelection = false;
+                    this.paintingType = false;
+
+                    switch (index) {
+                        case 'Cores':
+                            this.colorTypeSelection = true;
+                            break
+                        case 'Pintura':
+                            this.paintingType = true;
+                            break;
+                        default:
+                            let subItems = await this.callback("getSubItems", { index: index });
+                            this.price = subItems.price
+                            if (typeof subItems == "object") {
+                                if (subItems.tabs) {
+                                    this.selectPart = index;
+                                    this.selectedIndex = ((subItems.active >= 0) ? subItems.active : 0);
+                                    this.oldMod = ((subItems.active >= 0) ? subItems.active : 0);
+                                    this.subMenus = subItems.tabs;
+                                    this.increasedPrice = subItems.increasedPrice
+                                } else {
+                                    this.changeCart("add", index, subItems.price, undefined, subItems?.increasedPrice);
+                                    if (index == "Neon" || index == "Fumaça Pneu") {
+                                        this.changeMenuColor(index)
+                                    }
+                                }
+
+                            } else {
+                                this.subMenus = [];
+                            }
+                            break
+                    }
+                    
+                    let newClass = '.' + className
+                    document.querySelector('.select_menu').classList.remove('select_menu');
+                    document.querySelector(newClass).classList.add('select_menu');
+                },
+                callback(name, body) {
+                    return fetch(`http://${window.GetParentResourceName()}/${name}`, {
+                        method: "POST",
+                        body: JSON.stringify(body)
+                    }).then((res) => res.json()).catch(err => {
+                    })
+                },
+                pagination(page) {
+
+                },
+                itemMenu(attr) {
+                    if (this.images[attr]) {
+                        return ((this.images[attr] && this.images[attr].length > 2) ? `images/${this.images[attr]}.svg` : 'images/pen.svg')
+                    }
+                    return 'images/cor.svg';
+                },
+                changeMenuColor(attr) {
+                    this.getColor(attr)
+                    this.colorType = attr
+                    this.colorTypeSelection = false
+                    this.colorSelection = true
+                },
+                async changePaint(index, addon, type) {
+                    let paintArr = [];
+                    paintArr[(type == "Primária" ? 1 : 0)] = -500
+                    paintArr[(type == "Primária" ? 0 : 1)] = index
+                    this.selectedIndex = index
+                    
+                    this.changeCart("add", 'Pintura ' + type, this.colorTypes[this.paintingSelection].price, this.selectedIndex, undefined);
+                    this.callback("changeMod", { index: paintArr, part: 'Pintura' })
+                },
+                async changeMod(index, part) {
+                    
+                    this.selectedIndex = index
+                    const response = await this.changeCart("add", part || this.selectPart, this.price, this.selectedIndex, undefined, this.increasedPrice);
+                    
+                    if (!response) return
+                    this.callback("changeMod", { index: index, part: part || this.selectPart })
+                    if (this.selectPart == "Tipo de Roda") {
+                        
+                        this.loadSubItems('Rodas Dianteira', `item_menu${Object.keys(this.renderItens).findIndex((part)=> {return part == "Rodas Dianteira"})}`)
+                    }
+                },
+                updateColor(type, event, forcedColor) {
+                    this.changeCart("add", `Cor ${type}`, this.menus['Cores'].price, event.target.value, { type: type, oldColor: this.oldCustomization[type] });
+                    this.callback("changeMod", { index: forcedColor || event.target.value, part: 'Cores', payload: type })
+                },
+                forceCart(cart, prices) {
+                    this.cart = cart;
+                    this.cartPrice = Object.values(this.cart).reduce((a, b) => a + b.price, 0);
+                    // cart.forEach((item)=>{
+                    //     this.changeCart("add", item, prices[item] || this.menus[item].price, -1)
+                    // })
+                }
+            },
+            mounted() {
+                window.vueInstance = this
+                document.getElementsByTagName("body")[0].style.display = "none"
+                window.addEventListener('message', function (ev) {
+                    switch (ev.data.action) {
+                        case 'cameraState':
+                            window.vueInstance.cameraState()
+                            break;
+                        case 'forceCart':
+                            window.vueInstance.forceCart(ev.data.cart, ev.data.prices)
+                            break;
+                        case 'updateOrders':
+                            window.vueInstance.orders = ev.data.orders
+                            break;
+                        case 'openPainel':
+                            document.getElementsByTagName("body")[0].style.display = "flex"
+                            window.vueInstance.painel = true
+                            window.vueInstance.orders = ev.data.orders
+                            break;
+                        case 'openUi':
+                            document.getElementsByTagName("body")[0].style.display = "flex"
+                            window.vueInstance.loadItems()
+                            window.vueInstance.hide = true
+                            break
+                    }
+                })
+            }
+        }).mount("#bennys");
+    </script>
+</body>
+
+</html>

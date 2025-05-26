@@ -1,0 +1,379 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+body {
+  margin: 0;
+  font-size: 1.6rem;
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.custom-box {
+  background: url(../imgs/ipad.png) #fff;
+  border-radius: 3rem;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 8rem;
+  width: 86rem;
+  height: 60rem;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  display: none;
+}
+
+/* .custom-box {
+  max-width: 700px;
+  background-color: #ffffffde;
+  padding: 30px;
+  margin: 40px auto;
+  border-radius: 10px;
+  max-height: 90vh;
+  position: relative;
+  display: none;
+} */
+
+/* .custom-box::before {
+  content: "";
+  width: 102%;
+  height: 105%;
+  z-index: -1;
+  background: linear-gradient(
+    0deg,
+    rgba(45, 8, 94, 1) 0%,
+    rgba(117, 67, 204, 1) 51%,
+    rgba(36, 183, 212, 1) 100%
+  );
+  position: absolute;
+  border-radius: 10px;
+  top: -7px;
+  left: -6px;
+} */
+
+.home-box h3 {
+  font-size: 1.8rem;
+  color: black;
+  font-weight: 500;
+  line-height: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.home-box p {
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  color: gray;
+  font-weight: 400;
+  margin-bottom: 3rem;
+  text-align: justify;
+}
+
+.home-box p span {
+  font-size: 1.4rem;
+  color: black;
+  font-weight: 500;
+}
+
+.btn {
+  padding: 1.5rem 4.5rem;
+  background-color: #009688;
+  color: white;
+  border: none;
+  border-radius: .5rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.quiz-box .question-number {
+  font-size: 1.6rem;
+  color: #009688;
+  font-weight: 600;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1rem;
+}
+
+.quiz-box .question-text {
+  font-size: 1.6rem;
+  color: black;
+  font-weight: 400;
+  padding: 2rem .5rem;
+  margin: 0;
+}
+
+.quiz-box .option-container {
+  margin-bottom: 1rem;
+  max-height: 50vh;
+}
+
+.quiz-box .option-container .option {
+  background-color: #cccccc;
+  padding: 1rem;
+  font-size: 1.4rem;
+  border-radius: .5rem;
+  margin: .5rem;
+  transition: all 0.5s;
+}
+
+.quiz-box .option-container .option:hover {
+  transition: all 0.5s;
+  background-color: #00968873;
+  color: whitesmoke;
+}
+
+.quiz-box .option-container .option-selected {
+  background-color: #00968873;
+  color: whitesmoke;
+}
+
+.green {
+  background-color: #00968791 !important;
+}
+
+.red {
+  background-color: rgb(129, 28, 28) !important;
+}
+
+.quiz-box .answers-indicator {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ccc;
+  display: flex;
+}
+
+.quiz-box .answers-indicator div {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  margin: .5rem;
+  background-color: #cccccc;
+}
+
+.result-box {
+  text-align: center;
+}
+
+.result-box h1 {
+  font-size: 2.2rem;
+  color: #009688;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.result-box table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.result-box table td {
+  border: 1px solid #cccccc;
+  padding: .8rem 1.5rem;
+  width: 50%;
+  font-size: 2.2rem;
+}
+
+#porte .nome-porte {
+  font-size: .6rem;
+  overflow: hidden;
+  position: absolute;
+  background: #ababab33;
+  padding: .3rem;
+  top: 7.6rem;
+  left: 6.6rem;
+  width: 10.8rem;
+  margin: 0;
+  color: #000000;
+  font-weight: 700;
+  max-height: 1.7rem;
+  border-radius: .3rem;
+}
+
+#porte .info-porte {
+  font-size: .7rem;
+  overflow: hidden;
+  position: absolute;
+  top: 11.6rem;
+  background: #ababab80;
+  left: 6.6rem;
+  padding: .3rem;
+  font-weight: 700;
+  width: 10.8rem;
+  margin: 0;
+  border-radius: .2rem;
+}
+
+.div-porte .foto-user {
+  width: 4.6rem;
+  height: 5.6rem;
+  margin-top: 7.55rem;
+  margin-left: 1.6rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  background-image: url(../imgs/no-avatar.png);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+
+.exibe-porte {
+  display: none;
+  pointer-events: none !important;
+}
+
+.porte-img {
+  background-image: url(../imgs/porte.png);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 20rem;
+  width: 19rem;
+  position: absolute;
+  top: 60%;
+  right: 5%;
+  transition: all 0.5s;
+  z-index: 1;
+  transform: scale(1.7);
+}
+
+.div-pista-quente {
+  background: #696969b9;
+  height: 26rem;
+  width: 21rem;
+  position: absolute;
+  top: 2%;
+  right: 1%;
+  transition: all 0.5s;
+  user-select: none;
+  border-radius: 1rem;
+  display: none;
+}
+
+.div-pista-quente::before {
+  content: "";
+  width: 105%;
+  height: 105%;
+  z-index: -1;
+  background: linear-gradient(
+    0deg,
+    rgba(45, 8, 94, 1) 0%,
+    rgba(117, 67, 204, 1) 51%,
+    rgba(36, 183, 212, 1) 100%
+  );
+  position: absolute;
+  border-radius: 1rem;
+  top: -.6rem;
+  left: -.5rem;
+}
+
+.div-pista-quente .overlay {
+  height: 100%;
+  width: 100%;
+}
+
+.div-pista-quente .overlay p {
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  font-size: 1.6rem;
+  width: 100%;
+  padding-top: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.div-pista-quente .overlay h5 {
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+  font-size: 1.2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.div-pista-quente .shots {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.div-pista-quente .shots span {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  margin: .5rem;
+  background: rgb(212, 212, 212);
+  box-shadow: 0px 0px .5rem 0px rgba(158, 158, 158, 0.75);
+  position: relative;
+  overflow: hidden;
+}
+
+.div-pista-quente .shots span::before {
+  content: "";
+  position: absolute;
+  height: 50%;
+  top: 40%;
+  width: 150%;
+  transform: rotate(-45deg);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.acertou {
+  background-color: #15b853 !important;
+}
+
+.errou {
+  background-color: rgb(189, 26, 26) !important;
+}
+
+.teste-pratico-box h3 {
+  font-size: 1.8rem;
+  color: black;
+  font-weight: 500;
+  line-height: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.teste-pratico-box p {
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  color: gray;
+  font-weight: 400;
+  text-align: justify;
+}
+
+.teste-pratico-box p span {
+  font-size: 1.4rem;
+  color: black;
+  font-weight: 500;
+}
+
+@media (max-width: 1400px) {
+  html {
+    font-size: 52.5%;
+  }
+}
+
+@media (max-width: 1000px) {
+  html {
+    font-size: 45%;
+  }
+}
+
+@media (max-width: 700px) {
+  html {
+    font-size: 35%;
+  }
+}

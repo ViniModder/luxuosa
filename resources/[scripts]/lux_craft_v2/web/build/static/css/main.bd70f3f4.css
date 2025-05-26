@@ -1,0 +1,819 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap);
+
+* {
+    border: none;
+    box-sizing: border-box;
+    font-family: Poppins;
+    font-weight: 400;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    -webkit-user-select: none;
+    user-select: none
+}
+
+#root,
+body {
+    color: #fff;
+    display: grid;
+    height: 100vh;
+    overflow: hidden;
+    place-items: center;
+    width: 100vw
+}
+
+/* MAIN PARTE DE TRAS */
+main {
+    align-items: center;
+    background: #000000e8;
+    flex-direction: column;
+    gap: 2vw;
+    height: 84%;
+    justify-content: center;
+    border-radius: 9px;
+    position: relative;
+    width: 90%
+}
+
+header nav {
+    justify-content: space-evenly
+}
+
+header nav,
+header nav ul {
+    align-items: center;
+    display: flex
+}
+
+header nav ul {
+    gap: .11vw;
+    border-radius: 6px;
+    border: 0.1vh solid #1f1f1f;
+    background: #1f1f1f;
+    padding: 0.5%; /* diminua o preenchimento interno */
+}
+
+header nav ul li {
+    border-radius: 6px;
+    /* padding: 1vw; */
+    border: 0.1vh solid #161616;
+    background: #161616;
+    cursor: pointer;
+    display: grid;
+    font-size: 1vw;
+    font-weight: 700;
+    height: 3.2vw;
+    place-items: center;
+    width: 10.6vw
+}
+
+header nav ul li:hover{
+    background: linear-gradient(66.83deg, #0678fa -7.91%, #0678fa 97.98%);
+    border-color: #0678fa
+}
+
+header nav ul li.current {
+    background: linear-gradient(66.83deg, #0678fa -7.91%, #0678fa 97.98%);
+    border-color: #0678fa
+}
+
+header nav ul li#inactive {
+    cursor: default;
+    opacity: .25
+}
+
+header nav span {
+    text-align: center
+}
+
+header nav span h4 {
+    color: #636363;
+    font-size: 0vw
+}
+
+header nav span h1 {
+    background: linear-gradient(90deg, #0678fa, #0678fa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: #0000;
+    font-size: 5vw;
+    font-weight: 600;
+    /* margin-top: -2vw */
+}
+
+section {
+    display: flex;
+    height: auto;
+    justify-content: center;
+    width: 100%
+}
+
+article.start {
+    display: flex;
+    margin-top: 5vw
+}
+
+article .topic {
+    align-items: center;
+    border-radius: 6px;
+    border: 0.1vh solid #1f1f1f;
+    background: #1f1f1f;
+    padding: 1vw;
+    margin: 10px; /* Espaçamento entre as caixas */
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    height: 23.3vw;
+    padding-block: 2vw;
+    position: relative;
+    width: 25.7vw
+}
+
+article .topic a {
+    color: #fff
+}
+
+article .topic span {
+    border-radius: 6px;
+    border: 0.1vh solid #1f1f1f;
+    background: #1f1f1f;
+    padding: 1vw;
+    margin: -0.2% auto; 
+}
+
+article .topic span h2 {
+    background: linear-gradient(90deg, #fff, #454545);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: #0000;
+    font-size: 1.8vw;
+    font-weight: 700
+}
+
+article .topic span p {
+    font-size: .9vw;
+    font-weight: 500;
+    text-transform: none
+}
+
+article .topic .st-btn {
+    background: radial-gradient(55.8% 60.16% at 50% 64.06%, #2e2e2e 0, #2e2e2e00 100%);
+    border: .05vw solid #323231;
+    border-radius: 7px;
+    cursor: pointer;
+    display: grid;
+    font-size: 1.2vw;
+    font-weight: 700;
+    height: 3.2vw;
+    place-items: center;
+    width: 10.6vw
+}
+
+article .topic .icon {
+    display: flex;
+    justify-content: center
+}
+
+article .topic .icon .blur,
+article .topic .icon svg {
+    bottom: -6.75vw;
+    height: 13.6vw;
+    position: absolute;
+    width: 13.6vw
+}
+
+article .topic .icon .blur {
+    background: #0b72f833;
+    border-radius: 100%;
+    filter: blur(2.5vw)
+}
+
+aside {
+    display: flex;
+    padding-right: .15vw;
+    border-radius: 6px;
+    padding: 1vw;
+    border: 0.1vh solid #161616;
+    margin: -0.2vh auto;
+    background: #161616;
+
+    gap: .1vw;
+    /* margin: -0.2vh auto; 
+    gap: .15vw; */
+    flex-direction: column
+}
+
+aside.left {
+    margin-right: -3.7vw; /* Espaçamento à direita */
+    margin-top: -0.9vw; /* Espaçamento para cima */
+    height: 760px; /* Altura do aside */
+}
+
+.right {
+
+    margin-top: -0.9vw; /* Espaçamento para cima */
+    height: 760px; /* Altura do aside */
+}
+
+
+aside .title {
+    align-items: center;
+    display: flex;
+    gap: .5vw
+}
+
+aside .title h2 {
+    background: linear-gradient(90deg, #fff, #454545);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: #0000;
+    font-size: 1.65vw;
+    font-weight: 700
+}
+
+aside .itens {
+    display: flex;
+    flex-direction: column;
+    gap: .5vw;
+    height: 35vw;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    /* padding-right: .05vw;
+    border-radius: 6px;
+    border: 0.1vh solid #161616;
+    background: #161616; */
+    width: auto
+}
+
+/* .itens {
+    padding-right: .05vw;
+    border-radius: 6px;
+    padding: 1vw;
+    border: 0.1vh solid #161616;
+    background: #161616;
+} */
+
+aside .itens::-webkit-scrollbar {
+    background: #1b1b1b00;
+    width: .4vw
+}
+
+aside .itens::-webkit-scrollbar-thumb {
+    background: #0678fa
+}
+
+aside .itens .item {
+    display: flex;
+    gap: .5vw
+}
+
+aside .itens .item .it-info {
+    align-items: center;
+    /* border-radius: 6px;
+    border: 0.1vh solid #1f1f1f;
+    background: #1f1f1f;
+    margin: -0.2vh auto;  */
+    display: flex;
+    height: 4.0vw;
+    justify-content: space-between;
+    width: 18.3vw
+}
+
+.it-info{
+    border-radius: 6px;
+    border: 0.1vh solid #1f1f1f;
+    background: #1f1f1f;
+    padding: 1vw;
+    margin: -0.2vh auto; 
+}
+
+aside .itens .item .it-info img {
+    max-height: 100%;
+    max-width: 7.5vw
+}
+
+aside .itens .item .it-info span {
+    align-items: center;
+    background: linear-gradient(66.83deg, #2e2e2e80 -7.91%, #14141480 97.98%);
+    border: .05vw solid #3e3d3c;
+    border-radius: 4px;
+    display: flex;
+    font-size: 1.2vw;
+    gap: .5vw;
+    height: 3vw;
+
+    justify-content: center;
+    margin-right: 1vw;
+    width: 7.75vw
+}
+
+aside .itens .item .it-select {
+    border-radius: 15px;
+    /* border: 0.1vh solid #1f1f1f; */
+    background: #1f1f1f;
+    border-radius: 7px;
+    gap: .5vw;
+    cursor: pointer;
+    display: grid;
+    height: 4.005vw;
+    place-items: center;
+    width: 4vw
+}
+
+/* .it-select{
+    background-image: linear-gradient(to right, #5014f7, transparent);
+    border-color: #6220fd
+} */
+
+aside .itens .item .it-select.selected {
+    background-image: linear-gradient(to right, #0678fa, transparent);
+    border-color: #0678fa
+}
+
+article.center {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+    /* justify-content: flex-end; */
+    padding-inline: 4.2vw
+}
+
+article .c-input {
+    align-items: center;
+    display: flex;
+
+    gap: 1vw
+}
+
+article .c-input input {
+    border-radius: 6px;
+    padding: 1vw;
+    border: 0.1vh solid #161616;
+    margin: -0.2vh auto;
+    background: #161616;
+    color: #fff;
+    font-size: 1.2vw;
+    height: 2.5vw;
+    text-align: center;
+    margin-right: -6.5vw; /* Espaçamento à direita */
+    width: 32.5vw
+}
+
+
+article .c-input input::-webkit-inner-spin-button,
+article .c-input input::-webkit-outer-spin-button {
+    display: none
+}
+
+article .c-input svg {
+    cursor: pointer
+}
+
+article span#it-name {
+    font-size: 1.2vw;
+    font-weight: 700
+}
+
+article .c-frame {
+    display: flex;
+    /* width: 17.4vh; */
+    height: 27.8vh;
+    padding: 2vh 2vh 3vh 2vh;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vh;
+    border-radius: 1vh;
+    background: #111;
+    display: grid;
+    height: 14.7vw;
+    margin-right: 3vw; /* Espaçamento à direita */
+    place-items: center;
+    width: 27.2vw
+}
+
+article .c-frame img {
+    max-height: 12vw;
+    max-width: 12vw
+}
+
+article.center .infos {
+    align-items: center;
+    display: flex;
+    gap: .5vw
+}
+
+article.center .infos .qtd,
+article.center .infos .timer {
+    align-items: center;
+    border-radius: 6px;
+    padding: 1vw;
+    border: 0.1vh solid #161616;
+    margin: -0.2vh auto;
+    background: #0678fa;
+    display: flex;
+    height: 2.3vw;
+    justify-content: center;
+    margin-top: -1.5vw; /* Defina o valor negativo para mover para cima */
+    text-transform: none;
+    width: 8.9vw
+}
+
+
+article.center .infos .timer {
+    gap: .5vw;
+    width: 6vw
+}
+
+article .craft {
+    align-items: center;
+    flex-direction: column
+}
+
+article .craft,
+article .craft span {
+    display: flex;
+    gap: 4.5vw
+}
+
+article .craft span .btn-craft {
+    border-radius: 6px;
+    border: 0.1vh solid #111111;
+    background: #222222;
+    cursor: pointer;
+    display: grid;
+    height: 9.9vw;
+    place-items: center;
+    width: 6.4vw
+}
+
+article .craft span .btn-craft:hover{
+    background-image: linear-gradient(to right, #0678fa, transparent);
+    border-color: #0678fa
+}
+
+.btn-craft{
+    margin-right: -12.4vw; 
+    margin-top: -11.6vw; 
+}
+
+article .craft .components {
+    grid-gap: .5vw;
+    display: grid;
+    gap: 1.5vw;
+    grid-template-columns: repeat(3, 1fr)
+}
+
+article .craft .components .component {
+    align-items: center;
+    border-radius: 6px;
+    padding: 1vw;
+    border: 0.1vh solid #252525;
+    margin: -0.2vh auto;
+    background: #252525;
+
+    display: flex;
+    flex-direction: column;
+    height: 5vw;
+    justify-content: space-between;
+    padding: .05vw;
+    width: 9.5vw
+}
+
+.components{
+    border-radius: 6px;
+    padding: 1.8vw;
+    border: 0.1vh solid #161616;
+    margin: -0.1vh auto;
+    display: center;
+    margin-top: -9.9vw; /* Espaçamento para cima */
+    margin-right: -6.0vw; /* Espaçamento à direita */
+    width: 35.5vw; /* Largura do aside */
+    background: #161616;
+}
+
+article .craft .components .component h4 {
+    font-size: .7vw;
+    font-weight: 800;
+    margin-top: .3vw;
+    text-transform: none
+}
+
+article .craft .components .component img {
+    max-height: 3vw;
+    max-width: 9vw
+}
+
+article .craft .components .component .cmp-qtd {
+    background: linear-gradient(68.81deg, #0678fa 2.23%, #0678fa 120.95%);
+    border: .025vw solid #0678fa;
+    box-shadow: 0 0 1vw #0342f040;
+    display: grid;
+    font-size: .5vw;
+    font-weight: 700;
+    height: 1vw;
+    place-items: center;
+    width: 4.3vw
+}
+
+aside.right .itens .item .it-info {
+    width: 20.55vw
+}
+
+article.routes{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-right: .05vw;
+    border-radius: 6px;
+    border: 0.1vh solid #111111;
+    background: #111111;
+    padding: 0vw;
+    gap: 1vw
+}
+article.storage {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-right: .05vw;
+    /* border-radius: 6px;
+    border: 0.1vh solid #1f1f1f;
+    background: #1f1f1f;
+    padding: 1vw; */
+    gap: 1vw
+}
+
+article .top {
+    align-items: center;
+    display: flex;
+    border-radius: 6px;
+    padding: 0.61vw;
+    border: 0.1vh solid #161616;
+    background: #161616;
+    margin: 10px; /* Espaçamento entre as caixas */
+    gap: .0vw
+}
+
+article .top h2 {
+    background: linear-gradient(90deg, #fff, #454545);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: #0000;
+    font-size: 1.65vw;
+    font-weight: 700
+}
+
+article .top .store-all {
+    border-radius: 6px;
+    border: 2px solid #1436f7;
+    background: #161616;
+
+    border-radius: 7px;
+    cursor: pointer;
+    display: grid;
+    /* font-size: 1vw; */
+    font-weight: 700;
+    height: 3.2vw;
+    place-items: center;
+    width: 8.6vw
+}
+
+article .top .store-all:hover {
+    background-image: linear-gradient(to right, #0678fa, transparent);
+}
+
+article .stored-itens {
+    grid-gap: .5vw;
+    display: grid;
+    gap: .3vw;
+    grid-template-columns: repeat(8, 1fr)
+}
+
+article .stored-itens .std-item {
+    height: auto;
+    width: 10.5vw
+}
+
+article .stored-itens .std-item-bg {
+    align-items: center;
+    border-radius: 6px;
+    border: 0.1vh solid #1f1f1f;
+    background: #1f1f1f;
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
+    height: 5.88vw;
+    padding-top: .5vw;
+    text-align: center;
+    width: 100%
+}
+
+article .stored-itens .std-item-bg h4 {
+    font-size: .7vw;
+    font-weight: 800
+}
+
+article .stored-itens .std-item-bg img {
+    max-height: 4vw;
+    max-width: 8vw
+}
+
+article .stored-itens .std-btns {
+    display: flex;
+    height: 1.9vw;
+    width: 100%
+}
+
+article .stored-itens .std-btns .std-btn p {
+    font-size: .5vw
+}
+
+article .stored-itens .std-btns .std-btn {
+    align-items: center;
+    border-radius: 6px;
+    border: 0.1vh solid #1f1f1f;
+    background: #1f1f1f;
+    padding: 1vw;
+    margin: 2px; /* Espaçamento entre as caixas */
+    display: flex;
+    gap: .25vw;
+    height: 100%;
+    justify-content: center;
+    width: 48.3%
+}
+
+article .stored-itens .std-btns .std-item-store {
+    cursor: pointer;
+    font-size: .6vw;
+    border: 0.1vh solid #0678fa;
+    background: #1e08473a;
+    font-weight: 700
+}
+article .stored-itens .std-btns .std-item-store:hover {
+    background-image: linear-gradient(to right, #0678fa, transparent);
+}
+
+
+.parts,
+.parts-container,
+article .container {
+    align-items: center;
+    display: flex;
+    gap: .5vw
+}
+
+article .container {
+    gap: 1vw
+}
+
+article .container .parts-container svg {
+    cursor: pointer
+}
+
+article .container .parts-container .parts .part {
+    align-items: center;
+    border-radius: 6px;
+    border: 0.1vh solid #1f1f1f;
+    background: #1f1f1f;
+    padding: 1vw;
+    margin: 10px; /* Espaçamento entre as caixas */
+    display: flex;
+    flex-direction: column;
+    height: 9vw;
+    justify-content: center;
+    padding-inline: .5vw;
+    position: relative;
+    width: 8.25vw
+}
+
+article .container .parts-container .parts .part span {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: .5vw;
+    position: absolute;
+    top: .5vw;
+    width: 100%
+}
+
+article .container .parts-container .parts .part p {
+    color: #6d6c6b;
+    font-size: .7vw;
+    font-weight: 700;
+    text-transform: none
+}
+
+article .container .parts-container .parts .part p.p-name {
+    bottom: .5vw;
+    position: absolute
+}
+
+article .container .parts-container .parts .part img {
+    max-height: 5.75vw;
+    max-width: 6.75vw
+}
+
+article .container .rt-container {
+    display: flex;
+    flex-direction: column;
+    gap: .75vw;
+    height: auto;
+    width: 49.25vw
+}
+
+article .container .rt-container .rt-infos {
+    align-items: center;
+    border-radius: 6px;
+    border: 0.1vh solid #1f1f1f;
+    background: #1f1f1f;
+    padding: 1vw;
+    display: flex;
+    height: 5.5vw;
+    justify-content: space-between;
+    padding-inline: 2vw;
+    width: 100%
+}
+
+.rt-right-info,
+article .container .rt-container .rt-infos .rt-left-info {
+    align-items: center;
+    display: flex;
+    gap: .75vw
+}
+
+article .container .rt-container .rt-infos span {
+    align-items: center;
+    display: flex;
+    gap: .5vw
+}
+
+article .container .rt-container .rt-infos span p {
+    color: #6d6c6b;
+    font-size: .6vw;
+    font-weight: 700
+}
+
+article .container .rt-container .rt-infos span b {
+    font-size: .9vw;
+    font-weight: 600
+}
+
+article .container .rt-container .rt-infos span b#atv {
+    color: #6fbd09
+}
+
+article .container .rt-container .rt-infos span b#bonus {
+    color: #3ae07c
+}
+
+article .container .rt-container .rt-infos span b#pts {
+    color: #ffd900;
+    font-size: 1.4vw
+}
+
+.del-btn,
+article .container .rt-container .col-btns {
+    display: grid;
+    height: 2.75vw;
+    place-items: center;
+    width: 100%
+}
+
+article .container .rt-container .del-btn {
+    background: radial-gradient(56.52% 60.94% at 50% 64.06%, #2e2e2ebf 0, #090909bf 100%);
+    border: .05vw solid #3e3d3c;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 1vw;
+    font-weight: 700
+}
+
+
+article .container .rt-container .col-btns {
+    align-items: center;
+    display: flex;
+    font-size: 1vw;
+    font-weight: 700;
+    justify-content: space-between
+}
+
+article .container .rt-container .col-btns .col-btn {
+    border: 0.1vh solid #0678fa;
+    background: #1004273a;
+    border-radius: 7px;
+    cursor: pointer;
+    display: grid;
+    font-size: 1vw;
+    font-weight: 700;
+    height: 100%;
+    place-items: center;
+    width: 24.25vw
+}
+
+article .container .rt-container .col-btns .col-btn:hover {
+    background-image: linear-gradient(to right, #0678fa, transparent);
+}
+
+/*# sourceMappingURL=main.bd70f3f4.css.map*/

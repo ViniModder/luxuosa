@@ -1,0 +1,433 @@
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0vw;
+    letter-spacing: 0.05vw;
+    font-size: 0.63vw;
+    color: #fff;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .title {
+    color: rgba(255, 255, 255, 0.35);
+    width: 81%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .title-text {
+    width: 10vw;
+    height: 2.44vw;
+    padding: .5vw;
+    position: relative;
+    margin-bottom: .4vw;
+  }
+
+  .title-text-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #1000f3;
+    transform: rotate(2deg);
+    border-radius: .26vw;
+    display: grid;
+    place-items: center;
+  }
+
+  .title-text b {
+    text-align: center;
+    font-size: 1.56rem;
+    font-weight: 900;
+    color: #FFF;
+  }
+
+  .title p {
+    color: #828282;
+    text-align: center;
+    font-family: Poppins;
+    font-size: .67vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 103.5%;
+    max-width: 291px;
+  }
+
+  #tattoo-container {
+    position: fixed;
+    width: 48.9rem;
+    right: -42vw; /* -42vw */
+    top: 50%;
+    transform: translateY(-50%);
+    background: #111111;
+    border-radius: 1vw;
+    padding: 1.82vw;
+    opacity: 0;
+    transition: all 0.4s ease-out;
+
+    width: 25.46vw;
+  }
+
+  .line {
+    position: relative;
+  }
+
+  .line img {
+    position: absolute;
+    top: 3.5rem;
+    width: 27.5rem;
+    left: -13.95rem;
+  }
+
+  #tattoo-container.open {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+    right: .57vw;
+  }
+
+  .column {
+    width: 100%;
+    margin: auto;
+    margin-top: 1vw;
+  }
+
+  .category-title {
+    width: 13.23vw;
+    height: 1.51vw;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.96vw;
+    line-height: 0.94vw;
+    text-align: center;
+    text-transform: uppercase;
+    margin: auto;
+    color: #ffffff;
+    /* background: linear-gradient(90deg, #3067fffd 0%, rgba(255, 58, 58, 0) 111.02%); */
+    border-radius: 10.362px;
+    background: linear-gradient(180deg,
+        rgba(255, 255, 255, 0.02) 0%,
+        rgba(132, 132, 132, 0.02) 100%);
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hotkey {
+    margin-bottom: 0.83vw;
+  }
+
+  .hotkey:last-child {
+    margin-bottom: 0vw;
+  }
+
+  .hotkey span {
+    font-weight: bold;
+    font-size: 0.73vw;
+  }
+
+  .categories {
+    overflow: auto;
+    margin: auto;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.26vw;
+  }
+
+  .category {
+    flex: 1;
+    height: 2.34vw;
+    flex-shrink: 0;
+    border-radius: 0.1vw;
+    cursor: pointer;
+    border-radius: .26vw;
+    transition: all 0.1s ease-out;
+    background: #292929;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    justify-content: center;
+  }
+
+  .category img {
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+    align-self: center;
+  }
+
+  .category:hover {
+    background: #343434;
+  }
+
+  .category.selected {
+    background: #3067fffd;
+  }
+
+
+
+  .category-items {
+    width: 100%;
+    margin: auto;
+    margin-top: 1vw;
+  }
+
+  #reset {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 11px;
+    font-weight: 600;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  #reset:hover {
+    cursor: pointer;
+    color: #fff;
+  }
+
+  #save {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+    font-size: 1vw;
+    font-weight: 600;
+
+    color: #ffffff;
+    margin: auto;
+
+    height: 100%;
+    flex-shrink: 0;
+    background: none;
+    border-radius: .5vw;
+    border: solid .1rem #3067fffd;
+    flex: 1;
+    cursor: pointer;
+  }
+
+  #cancel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+    font-size: .78vw;
+    font-weight: 600;
+
+    color: #ffffff;
+    margin: auto;
+
+    height: 100%;
+    flex-shrink: 0;
+    background: #292929;
+    border-radius: .5vw;
+    cursor: pointer;
+    width: 4.5vw;
+  }
+
+  #save:hover {
+    color: #FFF;
+    background: #3067fffd;
+  }
+
+  #cancel:hover {
+    color: #111111;
+    background: #3067fffd;
+  }
+
+  #items {
+    height: 22.9vw;
+
+    width: 100%;
+    overflow-y: auto;
+
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    padding-right: .5vw;
+    align-content: flex-start;
+    gap: .26vw;
+    margin-top: .5vw;
+    margin-bottom: .5vw;
+  }
+
+  .item {
+    height: 4.11vw;
+    flex-shrink: 0;
+    cursor: pointer;
+    float: left;
+    line-height: 2.6vw;
+    text-align: center;
+    font-size: 0.68vw;
+    font-weight: bold;
+
+    transition: all 0.1s ease-out;
+    align-content: flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0b0b0b;
+    border: solid .2vw #3067fffd;
+    border-radius: .5vw;
+    color: #FFF;
+    font-size: 1vw;
+    font-weight: 600;
+  }
+
+  .item:hover,
+  .item.selected {
+    background: #3067fffd;
+    color: #0b0b0b;
+  }
+
+  .bttns {
+    display: flex;
+    align-items: center;
+    gap: 1.71vw;
+    height: 2.29vw;
+  }
+
+  .atalhos {
+    position: absolute;
+    top: 1.46vw;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  .modal-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) rotate(2.5deg);
+    top: -1.5vw;
+    background: #3067fffd;
+    height: 3vw;
+    border-radius: .5vw;
+    display: flex;
+    align-items: center;
+    padding: 0 1vw;
+  }
+
+  .modal-title > p {
+    font-size: 1.5vw;
+    font-weight: 800;
+  }
+
+  .modal-tattoo {
+    width: 26.3vw;
+
+    border-radius: .5vw;
+    background: #111111;
+    display: flex;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1.82vw;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    display: none;
+  }
+
+  .modal-tattoo > p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: .67vw;
+    max-width: 12.81vw;
+    text-align: center;
+
+    color: #828282;
+  }
+
+  .modal-bttns {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 1vw;
+  }
+
+  .modal-tattoo button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    color: #fff;
+    font-size: 1vw;
+    font-weight: 600;
+
+    color: #ffffff;
+    margin: auto;
+    position: relative;
+    flex: 1;
+    height: 2.76vw;
+
+    background: #1F1F1F;
+    border-radius: .5vw;
+    display: flex;
+    border: solid .1vw transparent;
+    transition: .2s ease-out;
+  }
+
+  .modal-tattoo button:hover {
+    background: #3067fffd;
+    color: #111111;
+  }
+
+  .modal-confirm {
+    border: solid .1vw #3067fffd !important;
+    background: none !important;
+  }
+
+  .modal-confirm:hover {
+    background: #3067fffd !important;
+    color: #FFF !important;
+  }
+
+  .close {
+    width: 1.35vw !important;
+    height: 1.35vw !important;
+
+    background: transparent !important;
+    outline: none !important;
+    cursor: pointer;
+
+  }
+
+  p.close {
+    top: -1rem;
+    right: 1rem;
+    position: absolute;
+    cursor: pointer;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0.26vw;
+    background: rgba(255, 255, 255, 0.10);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #3067fffd;
+  }

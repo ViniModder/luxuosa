@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://unpkg.com/vue@3.1.1/dist/vue.global.prod.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>capital-interactions</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <div v-if="opened" id="interactions">
+            <header>
+                <div class="title-interactions">
+                    <b>MENU</b>
+                </div>
+                <div v-if="renderInsideItems.length > 0 || renderClothes.length > 0"
+                    class="close-container-interactions">
+                    <p @click="renderInsideItems = [], renderClothes = []"><img src="./assets/images/back.svg" alt="">
+                    </p>
+                </div>
+            </header>
+            <main>
+                <div v-if="renderInsideItems.length === 0 && renderClothes.length === 0"
+                    v-for="(value, index) in renderItems" :key="index"  @click="actionClick(index)"  class="item-frame-interactions">
+                    <div class="icon-frame-interactions">
+                        <img :src="image(value.image)" />
+                    </div>
+                    <div class="content-frame-interactions">
+                        <span>{{value.name}}</span>
+                        <p>{{value.desc}}</p>
+                        <div class="triangle-frame-interactions-center"></div>
+                    </div>
+                </div>
+                <div v-if="renderClothes.length > 0" v-for="(value, index) in renderClothes" :key="index"
+                    class="item-frame-interactions">
+                    <div class="icon-frame-interactions">
+                        <img :src="image(value.image)" />
+                    </div>
+                    <div class="content-frame-interactions">
+                        <span>{{value.name}}</span>
+                        <p>{{value.desc}}</p>
+                        <div class="button-containe-interactions">
+                            <button @click="actionClothe(index, 'wear')" v-if="value.used">VESTIR</button>
+                            <button @click="actionClothe(index, 'delete')" v-if="value.used"><img src="./assets/images/trash.svg" alt=""></button>
+                            <button @click="actionClothe(index, 'save')" v-if="!value.used"
+                                class="save-clothe">Salvar</button>
+                        </div>
+                    </div>
+                </div>
+                <div @click="actionUse(index)" v-if="renderInsideItems.length > 0"
+                    v-for="(value, index) in renderInsideItems" :key="index" class="item-frame-interactions use-item">
+                    <div class="icon-frame-interactions">
+                        <img :src="image(value.image)" />
+                    </div>
+                    <div class="content-frame-interactions">
+                        <div class="triangle-frame-interactions-left"></div>
+                        <div class="triangle-frame-interactions-right"></div>
+                        <span>{{value.name}}</span>
+                        <p>{{value.desc}}</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,437 @@
+<html>
+
+<head>
+    <title>#vrp</title>
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body style="display: none;">
+    <img id="cursorPointer" src="assets/cursor.png">
+    <div class="openBarbershop">
+        <div class="tab">
+            <h1>BARBEARIA</h1>
+            <p>Cortes de cabelos exclusivos e lindos, escolha o que mais combina com seu estilo!</p>
+        </div>
+
+        <form id="formBarbershop">
+            <div class="block pilosite active">
+                <div class="sections">
+                    <div class="titleSection">
+                        CABELO
+                    </div>
+                    <div class="input">
+                        <div class="input__data">
+                            <div class="debounce" style="display: flex; align-items: center;">
+                                <div class="input__data__header">ESTILO</div>
+                            </div>
+                            <div class="input__value__content">
+                                <div class="input__range__area">
+                                    <input value="0" type="range" id="hair" class="hair" min="-1" max="320">
+                                    <div class="input__value label-value" data-legend="320"><input class="inputValue" data-range-id="hair" type="number" value="0" max="0" />/60</div>
+                                    <a href="#" class="arrow arrow-left"><img src="./assets/arrow-left.png" alt=""></a>
+                                    <a href="#" class="arrow arrow-right"><img src="./assets/arrow-right.png"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sections">
+                    <div class="input inputColor">
+                        <div class="input__data">
+                            <div class="debounce" style="display: flex; align-items: center;">
+                                <div class="input__data__header">Cor do Cabelo</div>
+                            </div>
+                            <div class="input__value__content">
+                                <div class="input__range__area">
+                                    <input value="0" type="range" id="haircolor" class="haircolor" min="-1" max="60">
+                                    <div class="input__value label-value" data-legend="60"><input class="inputValue" data-range-id="haircolor" type="number" value="0" max="0" />/60</div>
+                                    <a href="#" class="arrow arrow-left"><img src="./assets/arrow-left.png" alt=""></a>
+                                    <a href="#" class="arrow arrow-right"><img src="./assets/arrow-right.png" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sections">
+                    <div class="input inputColor">
+                        <div class="input__data">
+                            <div class="debounce" style="display: flex; align-items: center;">
+                                <div class="input__data__header">Reflexo do Cabelo</div>
+                            </div>
+                            <div class="input__value__content">
+                                <div class="input__range__area">
+                                    <input value="0" type="range" id="haircolor2" class="haircolor2" min="-1" max="60">
+                                    <div class="input__value label-value" data-legend="60"><input class="inputValue" data-range-id="haircolor2" type="number" value="0" max="0" />/60</div>
+                                    <a href="#" class="arrow arrow-left"><img src="./assets/arrow-left.png" alt=""></a>
+                                    <a href="#" class="arrow arrow-right"><img src="./assets/arrow-right.png" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sections">
+                    <div class="titleSection">
+                        BARBA
+                    </div>
+                    <div class="input">
+                        <div class="input__data">
+                            <div class="debounce" style="display: flex; align-items: center;">
+                                <div class="input__data__header">ESTILO</div>
+                            </div>
+                            <div class="input__value__content">
+                                <div class="input__range__area">
+                                    <input value="0" type="range" id="beard" class="beard" min="-1" max="28">
+                                    <div class="input__value label-value" data-legend="28"><input class="inputValue" data-range-id="beard" type="number" value="0" max="0" />/60</div>
+                                    <a href="#" class="arrow arrow-left"><img src="./assets/arrow-left.png" alt=""></a>
+                                    <a href="#" class="arrow arrow-right"><img src="./assets/arrow-right.png"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="sections">
+                    <div class="input inputColor">
+                        <div class="input__data">
+                            <div class="debounce" style="display: flex; align-items: center;">
+                                <div class="input__data__header">Cor da Barba</div>
+                            </div>
+                            <div class="input__value__content">
+                                <div class="input__range__area">
+                                    <input value="0" type="range" id="beardcolor" class="beardcolor" min="-1" max="54">
+                                    <div class="input__value label-value" data-legend="54"><input class="inputValue" data-range-id="beardcolor" type="number" value="0" max="0" />/60</div>
+                                    <a href="#" class="arrow arrow-left"><img src="./assets/arrow-left.png" alt=""></a>
+                                    <a href="#" class="arrow arrow-right"><img src="./assets/arrow-right.png"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sections">
+                    <div class="titleSection">
+                        MAQUIAGEM
+                    </div>
+                    <div class="input">
+                        <div class="input__data">
+                            <div class="debounce" style="display: flex; align-items: center;">
+                                <div class="input__data__header">ESTILO</div>
+                            </div>
+                            <div class="input__value__content">
+                                <div class="input__range__area">
+                                    <input value="0" type="range" id="makeup" class="makeup" min="-1" max="72">
+                                    <div class="input__value label-value" data-legend="72"><input class="inputValue" data-range-id="makeup" type="number" value="0" max="0" />/60</div>
+                                    <a href="#" class="arrow arrow-left"><img src="./assets/arrow-left.png" alt=""></a>
+                                    <a href="#" class="arrow arrow-right"><img src="./assets/arrow-right.png"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="sections">
+                    <div class="input inputColor">
+                        <div class="input__data">
+                            <div class="debounce" style="display: flex; align-items: center;">
+                                <div class="input__data__header">Cor da Maquiagem</div>
+                            </div>
+                            <div class="input__value__content">
+                                <div class="input__range__area">
+                                    <input value="0" type="range" id="makeupcolor" class="makeupcolor" min="-1"
+                                        max="62">
+                                    <div class="input__value label-value" data-legend="62"><input class="inputValue" data-range-id="makeupcolor" type="number" value="0" max="0" />/60</div>
+                                    <a href="#" class="arrow arrow-left"><img src="./assets/arrow-left.png" alt=""></a>
+                                    <a href="#" class="arrow arrow-right"><img src="./assets/arrow-right.png"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sections">
+                    <div class="titleSection">
+                        BATOM
+                    </div>
+
+                    <div class="input">
+                        <div class="input__data">
+                            <div class="debounce" style="display: flex; align-items: center;">
+                                <div class="input__data__header">ESTILO</div>
+                            </div>
+                            <div class="input__value__content">
+                                <div class="input__range__area">
+                                    <input value="0" type="range" id="lipstick" class="lipstick" min="-1" max="10">
+                                    <div class="input__value label-value" data-legend="10"><input class="inputValue" data-range-id="lipstick" type="number" value="0" max="0" />/60</div>
+                                    <a href="#" class="arrow arrow-left"><img src="./assets/arrow-left.png" alt=""></a>
+                                    <a href="#" class="arrow arrow-right"><img src="./assets/arrow-right.png"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+
+                <div class="sections">
+                    <div class="input inputColor">
+                        <div class="input__data">
+                            <div class="debounce" style="display: flex; align-items: center;">
+                                <div class="input__data__header">Cor do Batom</div>
+                            </div>
+                            <div class="input__value__content">
+                                <div class="input__range__area">
+                                    <input value="0" type="range" id="lipstickcolor" class="lipstickcolor" min="-1"
+                                        max="63">
+                                    <div class="input__value label-value" data-legend="63"><input class="inputValue" data-range-id="lipstickcolor" type="number" value="0" max="0" />/60</div>
+                                    <a href="#" class="arrow arrow-left"><img src="./assets/arrow-left.png" alt=""></a>
+                                    <a href="#" class="arrow arrow-right"><img src="./assets/arrow-right.png"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sections">
+                    <div class="titleSection">
+                        BLACKOUT
+                    </div>
+                    <div class="input">
+                        <div class="input__data">
+                            <div class="debounce" style="display: flex; align-items: center;">
+                                <div class="input__data__header">ESTILO</div>
+                            </div>
+                            <div class="input__value__content">
+                                <div class="input__range__area">
+                                    <input value="0" type="range" id="chestModel" class="chestModel" min="-1" max="33">
+                                    <div class="input__value label-value" data-legend="34"><input class="inputValue" data-range-id="chestModel" type="number" value="0" max="0" />/60</div>
+                                    <a href="#" class="arrow arrow-left"><img src="./assets/arrow-left.png" alt=""></a>
+                                    <a href="#" class="arrow arrow-right"><img src="./assets/arrow-right.png"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>                
+
+                <div class="sections">
+                    <div class="input inputColor">
+                        <div class="input__data">
+                            <div class="debounce" style="display: flex; align-items: center;">
+                                <div class="input__data__header">Cor do Blackout</div>
+                            </div>
+                            <div class="input__value__content">
+                                <div class="input__range__area">
+                                    <input value="0" type="range" id="chestColor" class="chestColor" min="-1" max="60">
+                                    <div class="input__value label-value" data-legend="34"><input class="inputValue" data-range-id="chestColor" type="number" value="0" max="0" />/60</div>
+                                    <a href="#" class="arrow arrow-left"><img src="./assets/arrow-left.png" alt=""></a>
+                                    <a href="#" class="arrow arrow-right"><img src="./assets/arrow-right.png"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sections">
+                    <div class="titleSection">
+                        SOMBRANCELHA
+                    </div>
+
+                    <div class="input">
+                        <div class="input__data">
+                            <div class="debounce" style="display: flex; align-items: center;">
+                                <div class="input__data__header">ESTILO</div>
+                            </div>
+                            <div class="input__value__content">
+                                <div class="input__range__area">
+                                    <input value="0" type="range" id="eyebrow" class="eyebrow" min="-1" max="34">
+                                    <div class="input__value label-value" data-legend="34"><input class="inputValue" data-range-id="eyebrow" type="number" value="0" max="0" />/60</div>
+                                    <a href="#" class="arrow arrow-left"><img src="./assets/arrow-left.png" alt=""></a>
+                                    <a href="#" class="arrow arrow-right"><img src="./assets/arrow-right.png"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="sections">
+                    <div class="input inputColor">
+                        <div class="input__data">
+                            <div class="debounce" style="display: flex; align-items: center;">
+                                <div class="input__data__header">Cor da Sombrancelha</div>
+                            </div>
+                            <div class="input__value__content">
+                                <div class="input__range__area">
+                                    <input value="0" type="range" id="eyebrowcolor" class="eyebrowcolor" min="-1"
+                                        max="54">
+                                    <div class="input__value label-value" data-legend="54"><input class="inputValue" data-range-id="eyebrowcolor" type="number" value="0" max="0" />/60</div>
+                                    <a href="#" class="arrow arrow-left"><img src="./assets/arrow-left.png" alt=""></a>
+                                    <a href="#" class="arrow arrow-right"><img src="./assets/arrow-right.png"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sections">
+                    <div class="titleSection">
+                        LENTE
+                    </div>
+
+                    <div class="input">
+                        <div class="input__data">
+                            <div class="debounce" style="display: flex; align-items: center;">
+                                <div class="input__data__header">ESTILO</div>
+                            </div>
+                            <div class="input__value__content">
+                                <div class="input__range__area">
+                                    <input value="0" type="range" id="eyesColor" class="eyesColor" min="0" max="31">
+                                    <div class="input__value label-value" data-legend="31"><input class="inputValue" data-range-id="eyesColor" type="number" value="0" max="0" />/60</div>
+                                    <a href="#" class="arrow arrow-left"><img src="./assets/arrow-left.png" alt=""></a>
+                                    <a href="#" class="arrow arrow-right"><img src="./assets/arrow-right.png"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sections">
+                    <div class="titleSection">
+                        BLUSH
+                    </div>
+
+                    <div class="input">
+                        <div class="input__data">
+                            <div class="debounce" style="display: flex; align-items: center;">
+                                <div class="input__data__header">ESTILO</div>
+                            </div>
+                            <div class="input__value__content">
+                                <div class="input__range__area">
+                                    <input value="0" type="range" id="blush" class="blush" min="-1" max="32">
+                                    <div class="input__value label-value" data-legend="32"><input class="inputValue" data-range-id="blush" type="number" value="0" max="0" />/60</div>
+                                    <a href="#" class="arrow arrow-left"><img src="./assets/arrow-left.png" alt=""></a>
+                                    <a href="#" class="arrow arrow-right"><img src="./assets/arrow-right.png"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="sections">
+                    <div class="input inputColor">
+                        <div class="input__data">
+                            <div class="debounce" style="display: flex; align-items: center;">
+                                <div class="input__data__header">Cor do Blush</div>
+                            </div>
+                            <div class="input__value__content">
+                                <div class="input__range__area">
+                                    <input value="0" type="range" id="blushcolor" class="blushcolor" min="-1" max="63">
+                                    <div class="input__value label-value" data-legend="63"><input class="inputValue" data-range-id="blushcolor" type="number" value="0" max="0" />/60</div>
+                                    <a href="#" class="arrow arrow-left"><img src="./assets/arrow-left.png" alt=""></a>
+                                    <a href="#" class="arrow arrow-right"><img src="./assets/arrow-right.png"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="buttonsConfirm">
+                <button class="submit">CONFIRMAR</button>
+                <button class="cancel" onclick="close()">SAIR</button>
+            </div>
+        </form>
+    </div>
+    </form>
+    </div>
+
+    <div class="popup confirmation">
+        <div class="rl">
+            <img class="no" src="./assets/close-modal.svg">
+        </div>
+        <h2>FINALIZAR</h2>
+        <p>Deseja confirmar e salvar suas alterações?</p>
+        <div class="button yes">Confirmar</div>
+    </div>
+
+    <div class="rotate">
+        <div class="rotateContent">
+            <p>Rotacione seu personagem para uma visualização melhor da customização.</p>
+            <hr>
+
+            <div class="buttonsRotate">
+                <div class="buttonRotate">
+                    <img src="./assets/arrow-left.png" alt="">
+                    <p>A</p>
+                </div>
+                <div class="buttonRotate">
+                    <p>D</p>
+                    <img src="./assets/arrow-right.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button id="head" class="selected" onclick="setCam('head')">
+                <svg width="21" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M11.0425 9.22459C10.1555 9.24551 9.34723 9.22172 8.54286 9.14996C7.55373 9.06179 6.56851 8.92441 5.65023 8.49095C5.22006 8.28796 4.82354 8.02386 4.56012 7.59738C4.19961 7.01383 4.1593 6.37655 4.31782 5.71837C4.60709 4.51436 4.95076 3.3288 5.45609 2.20189C5.70816 1.63966 6.01739 1.11803 6.43386 0.666939C6.96894 0.0874891 7.6187 -0.0736744 8.35654 0.0288469C8.80159 0.0907697 9.22941 0.228968 9.66429 0.33518C10.4064 0.516848 11.1349 0.421708 11.8547 0.197392C12.3381 0.0468906 12.8329 -0.0273348 13.3351 0.0136737C13.9703 0.0653444 14.4256 0.457796 14.8049 0.951128C15.3568 1.66878 15.6871 2.50986 15.9842 3.36694C16.2559 4.1502 16.4848 4.94823 16.677 5.75527C16.9287 6.8137 16.6418 7.78684 15.6006 8.36875C14.9454 8.73495 14.2322 8.90145 13.5092 9.02488C13.0869 9.09706 12.6579 9.12699 12.2309 9.16718C11.8085 9.20696 11.3838 9.16759 11.0421 9.22418L11.0425 9.22459Z"
+                        fill="white" />
+                    <path
+                        d="M10.7599 13.2155C9.90854 13.2151 8.86265 13.1778 7.81676 13.1011C6.96072 13.0384 6.10859 12.9465 5.2635 12.8001C3.95341 12.5733 2.6574 12.2818 1.4526 11.6613C1.1011 11.4805 0.774262 11.2615 0.490088 10.9773C-0.14989 10.338 -0.165547 9.49648 0.4576 8.83665C0.805185 8.46881 1.23223 8.21989 1.68002 8.01648C2.23271 7.76551 2.80301 7.56498 3.39054 7.4194C3.47352 7.3989 3.51462 7.38946 3.54985 7.49034C3.87943 8.43477 4.57147 8.98839 5.4189 9.36566C6.19392 9.71096 7.01239 9.87376 7.84416 9.97669C8.88692 10.1059 9.93319 10.1502 10.9818 10.1251C12.2297 10.0956 13.4752 10.0214 14.6902 9.68635C15.3955 9.49197 16.066 9.2168 16.6352 8.71445C16.9968 8.39499 17.2595 8.00705 17.4251 7.54735C17.4693 7.42473 17.5045 7.38454 17.6431 7.42432C18.5003 7.66914 19.3442 7.94636 20.0942 8.46389C20.4339 8.69804 20.7349 8.9769 20.895 9.38576C21.1013 9.91354 20.9952 10.386 20.65 10.8055C20.1134 11.4575 19.3837 11.7827 18.6357 12.0616C17.5765 12.4565 16.4782 12.6804 15.3677 12.8538C13.9046 13.0819 12.4332 13.1708 10.7603 13.2155H10.7599Z"
+                        fill="white" />
+                    <path
+                        d="M17.8705 13.2201C17.7112 14.0279 17.4282 14.7267 16.796 15.2192C16.7651 15.2434 16.7342 15.2762 16.699 15.2852C16.4062 15.3599 16.3189 15.6121 16.2179 15.8651C15.695 17.1753 15.1129 18.454 14.3074 19.6059C13.7288 20.4339 13.0638 21.1667 12.1608 21.6075C10.9791 22.1841 9.80872 22.1119 8.66459 21.4796C7.79876 21.001 7.15134 20.2723 6.58574 19.4533C5.87139 18.4195 5.34453 17.2799 4.86504 16.1128C4.85486 16.0878 4.84077 16.0644 4.83176 16.039C4.71512 15.7076 4.55385 15.4509 4.23837 15.2438C3.5933 14.8202 3.32478 14.1054 3.14825 13.3578C3.12868 13.2746 3.12476 13.2135 3.26137 13.2479C4.04187 13.4456 4.8302 13.6051 5.62675 13.7179C6.19314 13.7983 6.76031 13.8643 7.32983 13.9192C8.60901 14.0427 9.89014 14.103 11.174 14.073C11.987 14.0538 12.7988 14.0004 13.6098 13.9238C14.231 13.8651 14.8507 13.7958 15.4683 13.7068C15.6147 13.6855 15.7607 13.6593 15.9181 13.6334C15.8958 13.7236 15.8273 13.7667 15.776 13.8204C13.6275 16.073 11.4781 18.3248 9.32923 20.5766C9.17266 20.741 9.17148 20.7439 9.37698 20.8304C10.5446 21.3233 11.5975 21.0875 12.5546 20.2719C13.3037 19.6334 13.8279 18.8071 14.3019 17.9414C14.851 16.9383 15.2804 15.8758 15.6981 14.8079C15.749 14.6775 15.8069 14.6123 15.9596 14.5996C16.3389 14.5684 16.54 14.274 16.717 13.9627C16.7534 13.8987 16.7937 13.8315 16.8086 13.7605C16.8638 13.4919 17.0289 13.3829 17.2779 13.3517C17.4681 13.3279 17.6548 13.2693 17.8717 13.2196L17.8705 13.2201Z"
+                        fill="white" />
+                </svg>
+            </button>
+            <button id="chest" onclick="setCam('chest')">
+                <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M17.5127 7.21065V7.39108C17.5127 11.6942 17.5127 15.9974 17.5127 20.3005C17.5127 20.4586 17.5021 20.6158 17.419 20.7516C17.3111 20.9281 17.1458 20.9853 16.9628 20.997C16.908 21.0009 16.8523 20.9999 16.7974 20.9999C12.9125 20.9999 9.02762 20.9999 5.14271 20.9999C5.00036 20.9999 4.8589 20.9999 4.72805 20.9126C4.50613 20.7651 4.46192 20.5352 4.46192 20.2791C4.46192 19.5671 4.46192 18.8541 4.46192 18.1421C4.46192 14.6723 4.46192 11.2024 4.46192 7.73254V7.22326C4.41241 7.20677 4.37174 7.24169 4.3293 7.25624C3.72367 7.45898 3.11449 7.65105 2.50797 7.84797C2.17819 7.95565 1.99694 7.8538 1.83426 7.5201C1.6424 7.12626 1.4585 6.72854 1.2746 6.33082C0.881156 5.48203 0.489482 4.63226 0.0986927 3.78153C0.0659796 3.71072 0.0394554 3.63408 0.0217726 3.55648C-0.0427696 3.28196 0.0359188 3.07825 0.261374 2.93662C0.570823 2.74261 0.905028 2.6068 1.22774 2.44286C2.20825 1.94523 3.18611 1.43983 4.1675 0.942198C4.59101 0.727817 5.04722 0.613352 5.49018 0.461054C6.02243 0.277715 6.57325 0.17877 7.11257 0.0274421C7.22928 -0.00553953 7.34598 0.00319091 7.46004 0.045873C7.58382 0.0924354 7.67046 0.172949 7.72086 0.315547C7.83757 0.648273 7.91095 0.998461 8.07009 1.3147C8.33976 1.84919 8.6943 2.28669 9.15759 2.63299C9.57402 2.94438 10.0276 3.13257 10.5192 3.20629C11.1717 3.30427 11.802 3.21696 12.4041 2.89782C13.168 2.49331 13.7109 1.86568 14.0433 1.01495C14.0937 0.885935 14.1256 0.749158 14.168 0.616262C14.1963 0.525077 14.2219 0.431952 14.2591 0.344648C14.3802 0.0594537 14.5836 -0.0482217 14.8621 0.0196817C15.7497 0.235033 16.6312 0.474635 17.4941 0.7899C17.5666 0.816092 17.6383 0.848103 17.7081 0.883995C18.625 1.35156 19.5409 1.823 20.4595 2.28766C20.8592 2.48943 21.265 2.67567 21.6549 2.89879C22.0041 3.09862 22.0864 3.3518 21.9104 3.73303C21.3313 4.98827 20.7487 6.24157 20.166 7.49488C20.0714 7.69859 19.9317 7.84021 19.7142 7.87514C19.6338 7.88775 19.5613 7.87126 19.4879 7.847C18.8495 7.63747 18.2103 7.42697 17.5719 7.21744C17.5587 7.21259 17.5437 7.21259 17.5136 7.20871L17.5127 7.21065Z"
+                        fill="white" />
+                    <path
+                        d="M13.0257 0.407701C12.9196 1.28948 11.7711 2.10141 10.7738 1.99567C10.2026 1.93553 9.73228 1.65809 9.35652 1.18665C9.17085 0.953838 9.03469 0.689985 8.92948 0.395091C10.3114 0.734608 11.6685 0.732667 13.0257 0.407701Z"
+                        fill="white" />
+                </svg>
+
+
+            </button>
+        </div>
+    </div>
+
+    <div class="blur">
+
+    </div>
+
+    <!-- <script src="front.js" type="text/javascript"></script> -->
+    <script src="script.js" type="text/javascript"></script>
+</body>
+
+</html>

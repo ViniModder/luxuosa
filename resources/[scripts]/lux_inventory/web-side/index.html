@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>control_inventory</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+<body>
+    <div id="inventory">
+        <div class="container">
+            <main>
+                <div class="left-main">
+                    <div class="title-left">
+                        <p>ARMAS</p>
+                        <h3>Suas armas equipadas!</h3>
+                    </div>
+                    <div class="left-content"></div>
+                    <div class="left-buttons">
+                        <div class="button-left-red">DESEQUIPAR</div>
+                        <div class="button-left-black">TODAS</div>
+                    </div>
+                </div>
+                <div class="center-main">
+                    <div class="header-center">
+                        <div class="right-header-title">
+                            <p>MOCHILA</p>
+                            <h6>Organize e distribua seus itens por aqui! </h6>
+                        </div>
+                        <div class='header-weight'>
+                            <p>Peso</p>
+                            <div class='header-weight-background'>
+                                <div class='header-weight-fill inside-left'></div>
+                                <p class='weight-left'>10<b>/200</b></p>
+                            </div>
+                            <img src='assets/images/weight.svg' />
+                        </div>
+                    </div>
+                    <div class="container-slots slots-left"></div>
+
+                    
+                    <div class="keybar">
+                        <div class="header-center">
+                            <div class="right-header-title">
+                                <p>ATALHOS</p>
+                            </div>
+                            <hr>
+                            <b>Tenha um acesso mais a itens especificos! </b>
+                        </div>
+
+                        <div class="list-keybar-left slots-keybar-left">
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="right-main">
+                    <div class="photo-frame">
+                        <img class="image-grame" src="./assets/images/no_image.png" />
+                        <p class="weight-frame">0kg</p>
+                        <p class="name-frame"></p>
+                        <div class="circle-quantity">0</div>
+                    </div>
+                    <div class="buttons-frame">
+                        <div class="input-amount">
+                            <input type="number" class="input-frame" placeholder="Quantidade" />
+                        </div>
+                        <button class="action-button use" data-route="USE_ITEM">
+                            Usar
+                        </button>
+                        <button class="action-button" data-route="SEND_ITEM">
+                            Enviar
+                        </button>
+                        <button class="action-button" data-route="DROP_ITEM">
+                            Dropar
+                        </button>
+                    </div>
+                </div>
+                <div style="display: none;" class="add-main right">
+                    <div class="header-center">
+                        <div class="right-header-title">
+                            <p>ATUAL</p>
+                            <h6>Armazene itens preciosos, ou não!</h6>
+                        </div>
+                        <div class='header-weight'>
+                            <p>Peso</p>
+                            <div class='header-weight-background'>
+                                <div class='header-weight-fill inside-right'></div>
+                                <p class='weight-right'>10<b>/200</b></p>
+                            </div>
+                            <img src='assets/images/weight.svg' />
+                        </div>
+                    </div>
+                    <div class="container-slots slots-right">
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
+        integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
+    <script src="utils/App.js"></script>
+    <script src="main.js"></script>
+    <script src="modules/Weapons.js"></script>
+    <script src="modules/Inventory.js"></script>
+    <script src="modules/Inspect.js"></script>
+    <script src="modules/Chest.js"></script>
+    <script src="modules/Shop.js"></script>
+</body>
+
+</html>

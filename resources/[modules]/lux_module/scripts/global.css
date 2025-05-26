@@ -1,0 +1,54 @@
+@font-face {
+    font-family: Gilroy;
+    src: url(fonts/Gilroy-Light.otf);
+}
+
+@font-face {
+    font-family: akblack;
+    src: url('./fonts/Akrobat-Black.woff2');
+}
+
+@font-face {
+    font-family: akbold;
+    src: url('./fonts/Akrobat-Bold.woff2');
+}
+
+@font-face {
+    font-family: akexbold;
+    src: url('./fonts/Akrobat-ExtraBold.woff2');
+}
+
+@font-face {
+    font-family: aksemibold;
+    src: url('./fonts/Akrobat-SemiBold.woff2');
+}
+
+@font-face {
+    font-family: gilroy;
+    src: url('./fonts/Gilroy-Light.otf');
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh; 
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    user-select: none;
+    overflow: hidden;
+}
+
+img {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+}

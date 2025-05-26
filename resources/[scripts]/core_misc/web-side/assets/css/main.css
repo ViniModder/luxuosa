@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+#root {
+    width: 17.1rem;
+    position: absolute;
+    left: 2.2rem;
+    bottom: 27rem;
+    display: none;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.radar-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.28rem;
+}
+
+.radar-header {
+    padding: .5rem 0;
+    color: #FFF;
+    font-size: 0.8292rem;
+    font-weight: 900;
+    line-height: normal;
+    line-height: 100%;
+    letter-spacing: 0.0829rem;
+    border: 0.0319rem solid #454545;
+    background: linear-gradient(90deg, #0C0C0C 0.61%, rgba(21, 21, 21, 0.57) 99.94%);
+    box-shadow: 0rem 0.2427rem 0.2427rem 0rem rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.radar-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.45rem;
+}
+
+.velocity-info {
+    width: 6.9rem;
+    height: 6.0091rem;
+    border: 0.0327rem solid rgba(88, 88, 88, 0.44);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.60) 0.29%, rgba(30, 30, 30, 0.60) 100%);
+    box-shadow: 0rem 0.2481rem 0.2481rem 0rem rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.velocity-info label,
+.velocity-info span {
+    color: #FFF;
+    font-size: 0.8529rem;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.velocity-info strong {
+    color: #914ceb;
+    text-align: center;
+    font-size: 3.1025rem;
+    font-weight: 900;
+    line-height: 85%;
+}
+
+.vehicle-info {
+    flex: 1;
+    border: 0.0327rem solid rgba(88, 88, 88, 0.44);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.60) 0.29%, rgba(30, 30, 30, 0.60) 100%);
+    box-shadow: 0rem 0.2481rem 0.2481rem 0rem rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .2rem;
+}
+
+.vehicle-detail {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.vehicle-detail label,
+.vehicle-detail strong {
+    color: #FFF;
+    margin: .1rem 0;
+    font-size: 0.8529rem;
+    font-weight: 600;
+    line-height: 100%;
+}
+
+.vehicle-detail strong {
+    color: #b257ee;
+    font-size: 0.9797rem;
+    font-weight: 900;
+    letter-spacing: 0.049rem;
+}
+
+@media (max-width: 1250px) {
+    html {
+        font-size: 40%;
+    }
+}
+
+@media (max-width: 1150px) {
+    html {
+        font-size: 36%;
+    }
+}
+
+@media (max-width: 1000px) {
+    html {
+        font-size: 34%;
+    }
+}
+
+@media (max-width: 970px) {
+    html {
+        font-size: 30%;
+    }
+}
+
+@media (max-width: 850px) {
+    html {
+        font-size: 29%;
+    }
+}
+
+@media (max-width: 750px) {
+    html {
+        font-size: 28%;
+    }
+}
+
+@media (max-width: 650px) {
+    html {
+        font-size: 24%;
+    }
+}

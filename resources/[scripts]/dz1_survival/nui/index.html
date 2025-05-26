@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Morte</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="overlay"></div>
+    
+    <div id="morte-container">
+        <button id="btn-emergencia">📞 Ligar para emergência</button>
+        <h1>VOCÊ ESTÁ <span>INCONSCIENTE</span></h1>
+        <p>Você possui <span id="segundos">283</span> segundos de vida!</p>
+        <button id="btn-desistir" disabled>Desistir</button>
+        <div id="batimento-cardiaco-container">
+            <img id="batimento-cardiaco" src="batimentos.gif" alt="Batimentos cardíacos">
+        </div>
+        
+        <div id="mensagem-dinamica"></div>
+    </div>
+
+ 
+    <div id="modal-opcoes" class="modal hidden">
+        <div class="modal-content">
+            <h2>ESCOLHA UM LOCAL</h2>
+            <div id="opcoes-container"></div>
+            <button id="btn-fechar-modal">X</button>
+        </div>
+    </div>
+
+    <script src="functions.js"></script>
+</body>
+</html>

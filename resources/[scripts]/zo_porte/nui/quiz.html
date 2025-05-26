@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quiz App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="home-box custom-box">
+      <h3>Instrução:</h3>
+      <p>
+        Você irá responder um total <span class="total-question">4</span> de
+        questões, sendo necessário acertar todas delas para receber
+        liberação para realizar uma prova prática de manuseio e pontaria do
+        armamento!
+      </p>
+
+      <p>Valor do teste: <span id="valor-teste">10000</span> $</p>
+
+      <button id="iniciar-prova" type="button" class="btn">
+        Iniciar prova
+      </button>
+    </div>
+
+    <div class="quiz-box custom-box">
+      <div class="question-number">
+        Questão: <span id="num-question">1</span> de
+        <span id="total-question">4</span>
+      </div>
+      <div class="question-text">
+        Qual idade minima para tirar porte de arma?
+      </div>
+      <div class="option-container">
+        <div class="option">20</div>
+        <div class="option">22</div>
+        <div class="option">25</div>
+        <div class="option">30</div>
+      </div>
+
+      <div class="next-button">
+        <button id="responder" type="button" class="btn">Responder</button>
+      </div>
+
+      <div class="answers-indicator">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <div class="result-box custom-box">
+      <h1>Resultado</h1>
+
+      <table>
+        <tr>
+          <td>Total questões</td>
+          <td class="total-question">10</td>
+        </tr>
+
+        <tr>
+          <td>Questões corretas</td>
+          <td class="total-question-correct">7</td>
+        </tr>
+
+        <tr>
+          <td>Questões erradas</td>
+          <td class="total-question-error">3</td>
+        </tr>
+
+        <tr>
+          <td>Pocentagem</td>
+          <td class="total-question-percent">70%</td>
+        </tr>
+      </table>
+
+      <div class="buttons">
+        <button id="fechar" type="button" class="btn">Fechar</button>
+        <button id="inicio" type="button" class="btn">Voltar ao inicio</button>
+      </div>
+    </div>
+
+    <div class="teste-pratico-box custom-box">
+      <h3>Instrução:</h3>
+      <p style="margin-bottom: 30px;">
+        Você irá realizar um teste de manuseio e disparo com o armamento, é
+        necessário acertar no minímo 8 de 10 alvos para ser aprovado nesta parte
+        do teste! Quando aprovado procure algum policial para liberar o seu porte 
+      </p>
+
+      <div style="margin-bottom: 30px !important;">
+        <p>Valor do teste: <span id="valor-teste-pratico">10000</span> $</p>
+        <p id="necessario-laudo">* Necessário Laudo do Teste Teórico</p>
+      </div>
+      
+
+      <button id="iniciar-teste-pratico" type="button" class="btn">
+        Iniciar Prática
+      </button>
+    </div>
+
+    <div class="div-porte exibe-porte">
+      <div id="porte" class="porte-img rotate-porte">
+        <!-- <div class="foto-user"></div> -->
+        <p class="nome-porte">Jubenilson Jublisclaudo</p>
+        <p class="info-porte">Sem porte</p>
+      </div>
+    </div>
+
+    <div class="div-pista-quente">
+      <div class="overlay">
+        <p>Pista Fria</p>
+        <h5>
+          Precione <span style="font-weight: 800">E</span> para
+          começar
+        </h5>
+        <h5>
+          Precione <span style="font-weight: 800">X</span> para
+          cancelar
+        </h5>
+
+        <div class="shots">
+          <span class="1"></span>
+          <span class="2"></span>
+          <span class="3"></span>
+          <span class="4"></span>
+          <span class="5"></span>
+          <span class="6"></span>
+          <span class="7"></span>
+          <span class="8"></span>
+          <span class="9"></span>
+          <span class="10"></span>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/question.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

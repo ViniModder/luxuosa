@@ -1,0 +1,453 @@
+* {
+    border: none;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    margin: 0;
+    outline: none;
+    padding: 0;
+    text-decoration: none;
+    -webkit-user-select: none;
+    user-select: none
+}
+
+#root,
+body {
+    color: #fff;
+    display: grid;
+    height: 100vh;
+    place-items: center;
+    width: 100vw
+}
+
+.background {
+    background-image: url(../media/background.0bbead08b7fbdcc02e96.png);
+    background-size: cover;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -3
+}
+
+main {
+    flex-direction: column;
+    gap: .5vw;
+    width: 60vw
+}
+
+header,
+main {
+    display: flex
+}
+
+header {
+    align-items: center;
+    background: #121212;
+    border: .1vw solid #2a2a2a;
+    border-radius: .25vw;
+    font-size: .75vw;
+    height: 3vw;
+    justify-content: space-between;
+    padding-inline: 1.5vw;
+    width: 100%
+}
+
+header span {
+    background: #f26363;
+    border-radius: 50%;
+    cursor: pointer;
+    display: grid;
+    height: 1.5vw;
+    place-items: center;
+    width: 1.5vw
+}
+
+header span i {
+    font-size: .65vw;
+    font-weight: 700
+}
+
+section {
+    align-items: center;
+    background: #1c011f;
+    border: .1vw solid #2a2a2a;
+    border-radius: .25vw;
+    display: flex;
+    flex-direction: column;
+    gap: .5vw;
+    height: 33vw;
+    padding: 1vw;
+    width: 75%
+}
+
+section#jobs {
+    height: auto;
+    width: 100%
+}
+
+section#jobs span {
+    text-align: center
+}
+
+section span {
+    width: 100%
+}
+
+section span h4 {
+    font-size: .85vw
+}
+
+section .options {
+    display: flex;
+    gap: 2vw
+}
+
+section .options img {
+    border-radius: .5vw;
+    cursor: pointer;
+    height: auto;
+    width: 20vw
+}
+
+section .options img:hover {
+    box-shadow: .25px .25px 7.5px #8943e680
+}
+
+section .options img:last-child:hover {
+    box-shadow: .25px .25px 7.5px #da000090
+}
+
+.container {
+    display: flex;
+    gap: .5vw;
+    width: 100%
+}
+
+.container aside {
+    height: auto;
+    width: 25%
+}
+
+.container aside .btn {
+    align-items: center;
+    background: #121212;
+    border: .1vw solid #2a2a2a;
+    border-radius: .25vw;
+    cursor: pointer;
+    display: flex;
+    font-size: .75vw;
+    gap: .5vw;
+    height: 3vw;
+    justify-content: center;
+    width: 100%
+}
+
+.container aside .btn svg {
+    width: .5vw
+}
+
+.container .cards-grid {
+    grid-gap: .5vw;
+    display: grid;
+    gap: .5vw;
+    grid-template-columns: repeat(3, 1fr);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%
+}
+
+.container .cards-grid::-webkit-scrollbar {
+    display: none
+}
+
+.container .cards-grid .card {
+    align-items: center;
+    background: #2a2a2a;
+    border-radius: .25vw;
+    display: flex;
+    flex-direction: column;
+    height: 14vw;
+    position: relative;
+    width: 14vw
+}
+
+.container .cards-grid .card span {
+    background: #383838;
+    border-radius: .15vw;
+    font-size: .7vw;
+    height: 9.5vw;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: .5vw;
+    position: absolute;
+    top: 2.2vw;
+    width: 90%
+}
+
+.container .cards-grid .card span::-webkit-scrollbar {
+    display: none
+}
+
+.container .cards-grid .card span p:first-of-type {
+    height: 85%
+}
+
+.container .cards-grid .card span p:nth-of-type(2) {
+    align-items: flex-end;
+    display: flex;
+    font-size: .6vw;
+    height: 15%
+}
+
+.container .cards-grid .card h3 {
+    font-weight: 600;
+    position: absolute;
+    text-shadow: .25px .25px 7.5px #ffffff80;
+    top: .5vw
+}
+
+.container .cards-grid .card-btns {
+    bottom: .5vw;
+    display: flex;
+    gap: 2vw;
+    position: absolute
+}
+
+.container .cards-grid button {
+    background: #0000;
+    border: .1vw solid #fff;
+    border-radius: .25vw;
+    bottom: .5vw;
+    color: #fff;
+    cursor: pointer;
+    font-size: .7vw;
+    padding: .25vw;
+    position: absolute
+}
+
+.container .cards-grid button:hover {
+    box-shadow: .25px .25px 5px #ffffff80
+}
+
+.container #announces .cards-grid .card span p {
+    height: 100%
+}
+
+.container #announces .cards-grid .card-btns button {
+    border-color: #f26363;
+    color: #f26363;
+    position: static
+}
+
+.container #announces .cards-grid .card-btns button:hover {
+    box-shadow: .25px .25px 5px #f2636380
+}
+
+.container #announces .cards-grid .card-btns button.on:last-of-type {
+    background: #fff;
+    color: #2a2a2a;
+    font-weight: 600
+}
+
+.container #announces .cards-grid .card-btns button:last-of-type {
+    border-color: #fff;
+    color: #fff
+}
+
+.container #announces .cards-grid .card-btns button:last-of-type:hover {
+    box-shadow: .25px .25px 5px #ffffff80
+}
+
+.container aside .btn.announce {
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    height: 4.5vw;
+    padding: .5vw;
+    width: 100%
+}
+
+.container aside .btn.announce span {
+    width: 100%
+}
+
+.container aside .btn.announce span h4 {
+    font-weight: 600
+}
+
+.container aside .btn.announce button {
+    background: linear-gradient(90deg, #8943e680, #8943e680);
+    border-radius: .3vw;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    padding: .6vw;
+    width: 100%
+}
+
+#popup-background {
+    background: #000000af;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    padding-top: 11vw;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3
+}
+
+#popup {
+    background: #121212;
+    border: .1vw solid #2a2a2a;
+    border-radius: .25vw;
+    display: flex;
+    flex-direction: column;
+    gap: .6vw;
+    height: 15vw;
+    padding: .75vw;
+    width: 20vw
+}
+
+#popup span {
+    align-items: center;
+    display: flex;
+    justify-content: space-between
+}
+
+#popup span h2 {
+    font-size: .9vw
+}
+
+#popup span button {
+    background: none;
+    border: .1vw solid #fff;
+    border-radius: .25vw;
+    color: #fff;
+    cursor: pointer;
+    padding: .35vw
+}
+
+#popup span button:hover {
+    box-shadow: .25px .25px 5px #ffffff80
+}
+
+#popup label {
+    background: #2a2a2a;
+    border-radius: .25vw;
+    display: flex;
+    flex-direction: column;
+    font-size: .7vw;
+    gap: .25vw;
+    padding: .5vw
+}
+
+#popup label b {
+    font-weight: 600
+}
+
+#popup label textarea {
+    background: #383838;
+    border-radius: .25vw;
+    color: #fff;
+    display: flex;
+    height: 5.5vw;
+    padding: .5vw;
+    resize: none
+}
+
+#popup label textarea::-webkit-scrollbar {
+    display: none
+}
+
+#popup label textarea::placeholder {
+    color: #ffffffab
+}
+
+#popup span#save {
+    display: flex;
+    justify-content: center;
+    width: 100%
+}
+
+#popup span#save button {
+    background: #8943e680;
+    border-color: #8943e680;
+    padding: .5vw;
+    width: 5vw
+}
+
+#popup span#save button:hover {
+    box-shadow: .25px .25px 5px #8943e680
+}
+
+#notify {
+    left: 0;
+    position: absolute
+}
+
+#notify header {
+    align-items: center;
+    border-bottom: 0;
+    border-radius: 0 .25vw 0 0;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: .5vw;
+    text-align: center;
+    width: 15vw
+}
+
+#notify header h4 {
+    color: #df0000;
+    font-size: .65vw;
+    font-weight: 600;
+    width: 10vw
+}
+
+#notify header p {
+    font-size: .55vw
+}
+
+#notify section {
+    background: #2a2a2a;
+    border-radius: 0 .25vw .25vw 0;
+    border-top: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    height: auto;
+    padding: .5vw 0 .5vw .5vw;
+    width: auto
+}
+
+#notify section #notify-img {
+    background-image: url(../media/legal.b2b6f4a02cb82a901c29.png);
+    background-size: 100% 165%;
+    border-radius: .15vw;
+    height: 6.5vw;
+    width: 16.5vw
+}
+
+#notify section #notify-text {
+    display: flex;
+    flex-direction: column;
+    height: 6.5vw;
+    justify-content: center;
+    text-align: center
+}
+
+#notify section #notify-text h3 {
+    font-size: .95vw;
+    font-weight: 600
+}
+
+#notify section #notify-text p {
+    font-size: .85vw;
+    width: 14vw
+}
+
+/*# sourceMappingURL=main.fcc993b1.css.map*/

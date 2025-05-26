@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    cursor: context-menu !important;
+}
+
+@font-face {
+    font-family: ablack;
+    src: url(fonts/ablack.otf);
+}
+
+@font-face {
+    font-family: aebold;
+    src: url(fonts/aebold.otf);
+}
+
+@font-face {
+    font-family: anormal;
+    src: url(fonts/anormal.ttf);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: arial, sans-serif;
+    color: #fff;
+}
+
+
+.container{
+    width: 100%;
+    height: 100%;
+}
