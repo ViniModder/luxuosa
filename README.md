@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://i.imgur.com/64tTD05.png" alt="Base Luxuosa Banner" width="600"/>
+  <img src="https://i.imgur.com/MD2BqMH.png" alt="Base Luxuosa Banner" width="600"/>
 </p>
 
 <h1 align="center">💎 Base Luxuosa - Remasterizada</h1>
