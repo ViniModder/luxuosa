@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="[https://r2.fivemanage.com/wpsWGUx1KTPLmXgc0cCnU/1.png](https://cdn.discordapp.com/attachments/1301319898621804546/1376583114998157422/logo.png?ex=6835da6e&is=683488ee&hm=1269f16c054ca3a08034c41ab354752142c10e14d9ea9525724a576e0a70bdf2&)" alt="Base Luxuosa Logo" width="300"/>
+  <img src="https://r2.fivemanage.com/wpsWGUx1KTPLmXgc0cCnU/1.png" alt="Base Luxuosa Logo" width="300"/>
 </p>
 
 <h1 align="center">💎 Base Luxuosa - Remasterizada</h1>
@@ -14,13 +14,13 @@
 
 ## 👥 Desenvolvedores e Créditos
 
-- 👑 **Base original desenvolvida por:** [Foxzin Community](https://discord.gg/foxzincommunity)  
-- 🔥 **Base remasterizada e otimizada por:** [Five Community](https://discord.gg/fivecommunity)  
-- 🛠️ **Desenvolvedores adicionais que participaram da montagem:**  
+- 👑 **Base original desenvolvida pela:** **Fusion Group**  
+- 🛠️ **Desenvolvedores responsáveis por refazer e aprimorar a Base Havana:**  
   - 👤 **Hawk**  
   - 👤 **Malvadão**  
   - 👤 **SJR**  
-  - 👥 **Equipe responsável pela Base Havana**, que foi originalmente criada pelo **Fusion Grupo**, com diversos ajustes, reconstruções e melhorias nos servidores e nos scripts da versão original.
+- 🔥 **Base remasterizada, otimizada e aprimorada por:** [Five Community](https://discord.gg/fivecommunity)  
+- ⚙️ **Foxzin Community contribuiu com melhorias e atualizações adicionais:** [Foxzin Community](https://discord.gg/foxzincommunity)
 
 > 🚨 **Se redistribuir, mantenha os créditos de todos os envolvidos!**  
 > É fundamental reconhecer o trabalho da comunidade e fortalecer os desenvolvedores.
