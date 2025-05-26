@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://r2.fivemanage.com/wpsWGUx1KTPLmXgc0cCnU/1.png" alt="Base Luxuosa Logo" width="300"/>
+  <img src="[https://r2.fivemanage.com/wpsWGUx1KTPLmXgc0cCnU/1.png](https://cdn.discordapp.com/attachments/1301319898621804546/1376583114998157422/logo.png?ex=6835da6e&is=683488ee&hm=1269f16c054ca3a08034c41ab354752142c10e14d9ea9525724a576e0a70bdf2&)" alt="Base Luxuosa Logo" width="300"/>
 </p>
 
 <h1 align="center">💎 Base Luxuosa - Remasterizada</h1>
