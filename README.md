@@ -5,7 +5,7 @@
 <h1 align="center">💎 Base Luxuosa - Remasterizada</h1>
 
 <p align="center">
-  Framework vRPex otimizado • Estimativa até 700 players (dependendo da sua VPS) • Base profissional, estável e remasterizada para servidores RP<br/>
+  Framework vRPex otimizado • Estimativa até 700 players (dependendo da sua VPS) • Base profissional, estruturada, organizada e remasterizada para servidores RP<br/>
   <a href="https://discord.gg/fivecommunity"><strong>🌐 Discord da Five Community</strong></a> • 
   <a href="https://discord.gg/foxzincommunity"><strong>⚙️ Discord da Foxzin Community</strong></a>
 </p>
@@ -15,15 +15,19 @@
 ## 👥 Desenvolvedores e Créditos
 
 - 👑 **Base original desenvolvida pela:** **Fusion Group**  
-- 🛠️ **Desenvolvedores responsáveis por refazer e aprimorar a Base Havana:**  
+- 🛠️ **Base Havana refeita, aprimorada e otimizada por:**  
   - 👤 **Hawk**  
   - 👤 **Malvadão**  
-  - 👤 **SJR**  
-- 🔥 **Base remasterizada, otimizada e aprimorada por:** [Five Community](https://discord.gg/fivecommunity)  
-- ⚙️ **Foxzin Community contribuiu com melhorias e atualizações adicionais:** [Foxzin Community](https://discord.gg/foxzincommunity)
+- ⚙️ **Foxzin Community contribuiu com:**  
+  - 🔥 **Aprimoramentos, melhorias e atualizações da base**  
+- 🔥 **Five Community é responsável pela:**  
+  - 🔧 **Modificação geral da base**  
+  - 🏗️ **Organização de toda a estrutura dos arquivos**  
+  - 🚀 **Otimização e melhorias na performance**  
+  - 📦 **Distribuição (vazamento) da base Luxuosa**  
 
 > 🚨 **Se redistribuir, mantenha os créditos de todos os envolvidos!**  
-> É fundamental reconhecer o trabalho da comunidade e fortalecer os desenvolvedores.
+> Valorize o trabalho dos desenvolvedores e da comunidade que mantém esse projeto ativo e funcional.
 
 ---
 
@@ -55,7 +59,8 @@ A base utiliza o **vRPex**, uma versão **altamente otimizada e atualizada** do 
 ### 📦 Passos para Instalação
 
 1️⃣ **Instale o MariaDB**  
-- Durante a instalação, **não defina senha** (recomendado para facilitar a configuração inicial).
+- Durante a instalação, **não defina senha** (recomendado para facilitar a configuração inicial).  
+🎥 **Tutorial de instalação do MariaDB:** [Assista no YouTube](https://youtu.be/-j2ostivrIs)
 
 2️⃣ **Instale o Apache**  
 - Acesse `http://localhost` para verificar se está funcionando corretamente.
