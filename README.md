@@ -5,7 +5,7 @@
 <h1 align="center">💎 Base Luxuosa - Remasterizada</h1>
 
 <p align="center">
-  Framework vRPex otimizado • Estimativa para até 700 players (dependendo da sua VPS) • Base profissional, organizada e pronta para servidores RP.<br/>
+  Framework vRPex otimizado • Estimativa até 700 players (dependendo da sua VPS) • Base profissional, organizada e pronta para servidores RP.<br/>
   <a href="https://discord.gg/fivecommunity"><strong>🌐 Discord Five Community</strong></a> • 
   <a href="https://discord.gg/foxzincommunity"><strong>⚙️ Discord Foxzin Community</strong></a>
 </p>
@@ -46,23 +46,17 @@ A Base Luxuosa utiliza uma versão personalizada do **vRPex**, otimizada para of
 
 ---
 
-## 🧰 Instalação
+## 📦 Download dos Mods
 
-### 🔧 Pré-requisitos
-- MariaDB ✅  
-- Apache ✅  
-- HeidiSQL ✅  
-- FiveM Artifacts Atualizados ✅  
+### 🎯 **Download dos MODS (Carros, Roupas, Mapas e Objetos):**  
+👉 [Clique aqui para baixar os MODS](https://drive.google.com/file/d/1eZMaxjV3WS3JOv-5cl8CfgmwG9xYUIDS/view?usp=sharing)
 
-### 🎥 **Tutorial de instalação do MariaDB:**  
-👉 [Clique aqui e assista](https://youtu.be/-j2ostivrIs)
+> ✅ Inclui:  
+- 🚗 **Veículos otimizados e testados**  
+- 👕 **Roupas e EUP personalizadas**  
+- 🏠 **Mapas exclusivos e atualizados**  
+- 🛠️ **Objetos, props e assets prontos para uso**  
 
-### 📝 Passo a Passo
-
-1️⃣ **Instale o MariaDB** (siga o tutorial acima).  
-2️⃣ **Instale o Apache** (acesse `http://localhost` para testar).  
-3️⃣ **Instale o HeidiSQL** (acesso via `root` sem senha).  
-4️⃣ **Gere sua chave CFX:** [Keymaster FiveM](https://keymaster.fivem.net/register)  
-Adicione no `server.cfg`:  
-```cfg
-sv_licenseKey "SUA_CHAVE_CFX"
+> ⚠️ **Após baixar, coloque os mods na pasta:**  
+```plaintext
+/resources/[mods]
