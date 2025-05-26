@@ -5,71 +5,64 @@
 <h1 align="center">💎 Base Luxuosa - Remasterizada</h1>
 
 <p align="center">
-  Framework vRPex otimizado • Estimativa até 700 players (dependendo da sua VPS) • Base profissional, estruturada, organizada e remasterizada para servidores RP<br/>
-  <a href="https://discord.gg/fivecommunity"><strong>🌐 Discord da Five Community</strong></a> • 
-  <a href="https://discord.gg/foxzincommunity"><strong>⚙️ Discord da Foxzin Community</strong></a>
+  Framework vRPex otimizado • Estimativa para até 700 players (dependendo da sua VPS) • Base profissional, organizada e pronta para servidores RP.<br/>
+  <a href="https://discord.gg/fivecommunity"><strong>🌐 Discord Five Community</strong></a> • 
+  <a href="https://discord.gg/foxzincommunity"><strong>⚙️ Discord Foxzin Community</strong></a>
 </p>
 
 ---
 
-## 👥 Desenvolvedores e Créditos
+## 👥 Créditos
 
-- 👑 **Base original desenvolvida pela:** **Fusion Group**  
-- 🛠️ **Base Havana refeita, aprimorada e otimizada por:**  
-  - 👤 **Hawk**  
-  - 👤 **Malvadão**  
-- ⚙️ **Foxzin Community contribuiu com:**  
-  - 🔥 **Aprimoramentos, melhorias e atualizações da base**  
-- 🔥 **Five Community é responsável pela:**  
-  - 🔧 **Modificação geral da base**  
-  - 🏗️ **Organização de toda a estrutura dos arquivos**  
-  - 🚀 **Otimização e melhorias na performance**  
-  - 📦 **Distribuição (vazamento) da base Luxuosa**  
+- 👑 **Base original:** Fusion Group  
+- 🛠️ **Reestruturação da Base Havana:**  
+  - Hawk  
+  - Malvadão  
+- ⚙️ **Contribuições:** Foxzin Community (Aprimoramentos e melhorias)  
+- 🔥 **Modificação, organização, estrutura, otimização e vazamento da Base Luxuosa:** Five Community  
 
-> 🚨 **Se redistribuir, mantenha os créditos de todos os envolvidos!**  
-> Valorize o trabalho dos desenvolvedores e da comunidade que mantém esse projeto ativo e funcional.
+> 🚨 **Se redistribuir, mantenha os créditos de todos os envolvidos.** Valorize quem trabalha e fortalece a comunidade.
 
 ---
 
-## ⚙️ Framework — Baseado em vRPex (Framework Modificado)
+## ⚙️ Framework
 
-A base utiliza o **vRPex**, uma versão **altamente otimizada e atualizada** do framework **vRP**, com melhorias profundas para desempenho, estabilidade e escalabilidade.
+A Base Luxuosa utiliza uma versão personalizada do **vRPex**, otimizada para oferecer:
 
-### 🚀 Desempenho
-
-- ✅ Suporte estimado para até **700 jogadores simultâneos** (dependendo da configuração da sua VPS/Dedicado)
-- ✅ Estrutura modular, robusta e extremamente otimizada
-- ✅ Processamento assíncrono com baixo uso de CPU e memória
-- ✅ Banco de dados otimizado com MariaDB
-
-### 🔒 Estabilidade
-
-- Arquitetura 100% modular
-- Totalmente assíncrona para garantir máxima performance
-- Integração nativa com **MariaDB**
-- Compatível com scripts públicos e privados
-- Estabilidade garantida para servidores de médio e grande porte
+- 🔹 Desempenho superior
+- 🔹 Código assíncrono
+- 🔹 Arquitetura modular
+- 🔹 Integração nativa com MariaDB
+- 🔹 Estabilidade para servidores médios e grandes
 
 ---
 
-## 🧰 Guia de Instalação
+## 🚀 Desempenho
 
-> ⚠️ **Recomendamos utilizar banco de dados MariaDB para garantir maior desempenho.**
+- ✅ Suporte estimado para até **700 jogadores online** (dependendo da sua VPS ou dedicado)
+- ✅ Estrutura leve e otimizada
+- ✅ Consumo reduzido de CPU e memória
+- ✅ Banco de dados assíncrono (MariaDB)
 
-### 📦 Passos para Instalação
+---
 
-1️⃣ **Instale o MariaDB**  
-- Durante a instalação, **não defina senha** (recomendado para facilitar a configuração inicial).  
-🎥 **Tutorial de instalação do MariaDB:** [Assista no YouTube](https://youtu.be/-j2ostivrIs)
+## 🧰 Instalação
 
-2️⃣ **Instale o Apache**  
-- Acesse `http://localhost` para verificar se está funcionando corretamente.
+### 🔧 Pré-requisitos
+- MariaDB ✅  
+- Apache ✅  
+- HeidiSQL ✅  
+- FiveM Artifacts Atualizados ✅  
 
-3️⃣ **Instale o HeidiSQL**  
-- Acesse com usuário `root` (sem senha) e conecte-se ao banco de dados.
+### 🎥 **Tutorial de instalação do MariaDB:**  
+👉 [Clique aqui e assista](https://youtu.be/-j2ostivrIs)
 
-4️⃣ **Gere sua chave CFX**  
-- Crie em: [https://keymaster.fivem.net/register](https://keymaster.fivem.net/register)  
-- Adicione no seu `server.cfg`:
+### 📝 Passo a Passo
+
+1️⃣ **Instale o MariaDB** (siga o tutorial acima).  
+2️⃣ **Instale o Apache** (acesse `http://localhost` para testar).  
+3️⃣ **Instale o HeidiSQL** (acesso via `root` sem senha).  
+4️⃣ **Gere sua chave CFX:** [Keymaster FiveM](https://keymaster.fivem.net/register)  
+Adicione no `server.cfg`:  
 ```cfg
 sv_licenseKey "SUA_CHAVE_CFX"
